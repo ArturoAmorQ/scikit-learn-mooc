@@ -325,17 +325,17 @@ print(f"The accuracy using a {model_name} is {score:.3f} "
 # %% [markdown]
 # ## Model evaluation using cross-validation
 #
-# In the previous example, we split the original data into a training set and a 
-# testing set. The score of a model will in general depend on the way we make 
+# In the previous example, we split the original data into a training set and a
+# testing set. The score of a model will in general depend on the way we make
 # such a split. One downside of doing a single split is that it does not give
-# any information about this variability. Another downside, in a setting where 
-# the amount of data is small, is that the data available for training
-# and testing will be even smaller after splitting.
+# any information about this variability. Another downside, in a setting where
+# the amount of data is small, is that the data available for training and
+# testing will be even smaller after splitting.
 #
 # Instead, we can use cross-validation. Cross-validation consists of repeating
-# the procedure such that the training and testing sets are different each
-# time. Generalization performance metrics are collected for each repetition and
-# then aggregated. As a result we can get an estimate of the variability of the
+# the procedure such that the training and testing sets are different each time.
+# Generalization performance metrics are collected for each repetition and then
+# aggregated. As a result we can get an estimate of the variability of the
 # model's generalization performance.
 #
 # Note that there exists several cross-validation strategies, each of them
@@ -360,8 +360,8 @@ print(f"The accuracy using a {model_name} is {score:.3f} "
 #
 # In scikit-learn, the function `cross_validate` allows to do cross-validation
 # and you need to pass it the model, the data, and the target. Since there
-# exists several cross-validation strategies, `cross_validate` takes a
-# parameter `cv` which defines the splitting strategy.
+# exists several cross-validation strategies, `cross_validate` takes a parameter
+# `cv` which defines the splitting strategy.
 
 # %%
 # %%time

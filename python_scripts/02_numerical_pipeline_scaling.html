@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preprocessing for numerical features &#8212; Scikit-learn course</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,10 +43,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sklearn_mooc.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,10 +56,13 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="✅ Quiz M1.02" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html" />
+    <link rel="next" title="🎥 Validation of a model" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html" />
     <link rel="prev" title="📃 Solution for Exercise M1.03" href="02_numerical_pipeline_sol_01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/scikit-learn-logo.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Machine Learning Concepts
  </span>
@@ -95,7 +109,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_concepts/slides.html">
-   📰 Introducing machine-learning concepts
+   🎥 Introducing machine-learning concepts
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The predictive modeling pipeline
  </span>
@@ -193,6 +207,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html">
+     🎥 Validation of a model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_cross_validation.html">
+     Model evaluation using cross-validation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html">
      ✅ Quiz M1.02
     </a>
@@ -240,6 +264,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_video.html">
+     🎥 Visualizing scikit-learn pipelines in Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_quiz_m1_03.html">
      ✅ Quiz M1.03
     </a>
@@ -257,7 +286,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Selecting the best model
  </span>
@@ -280,12 +309,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/overfitting_vs_under_fitting_slides.html">
-     📰 Overfitting and Underfitting
+     🎥 Overfitting and Underfitting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_train_test.html">
-     The framework and why do we need it
+     Cross-validation framework
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,7 +336,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/learning_validation_curves_slides.html">
-     📰 Comparing train and test errors
+     🎥 Comparing train and test errors
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,7 +378,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/bias_vs_variance_slides.html">
-     📰 Bias versus Variance
+     🎥 Bias versus Variance
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,7 +399,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Hyperparameter tuning
  </span>
@@ -434,8 +463,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../tuning/parameter_tuning_parallel_plot_video.html">
+     🎥 Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameter_tuning_parallel_plot.html">
+     Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="parameter_tuning_nested.html">
-     Cross-validation and hyperparameter tuning
+     Evaluation and hyperparameter tuning
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,7 +505,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Linear models
  </span>
@@ -489,7 +528,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/linear_models_slides.html">
-     📰 Intuitions on linear models
+     🎥 Intuitions on linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -590,12 +629,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/regularized_linear_models_slides.html">
-     📰 Intuitions on regularized linear models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04a.html">
-     ✅ Quiz M4.04a
+     🎥 Intuitions on regularized linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -614,8 +648,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04b.html">
-     ✅ Quiz M4.04b
+    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04.html">
+     ✅ Quiz M4.04
     </a>
    </li>
   </ul>
@@ -668,7 +702,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Decision tree models
  </span>
@@ -691,7 +725,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../trees/slides.html">
-     📰 Intuitions on tree-based models
+     🎥 Intuitions on tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -798,7 +832,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Ensemble of models
  </span>
@@ -821,7 +855,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ensemble/slides.html">
-     📰 Intuitions on ensemble of tree-based models
+     🎥 Intuitions on ensemble of tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -858,7 +892,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_01.html">
-     📃 Solution of Exercise M6.01
+     📃 Solution for Exercise M6.01
     </a>
    </li>
    <li class="toctree-l2">
@@ -899,6 +933,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ensemble_gradient_boosting.html">
+     Gradient-boosting decision tree (GBDT)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ensemble_ex_03.html">
      📝 Exercise M6.03
     </a>
@@ -906,21 +945,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_03.html">
      📃 Solution for Exercise M6.03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_gradient_boosting.html">
-     Gradient-boosting decision tree (GBDT)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_ex_04.html">
-     📝 Exercise M6.04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_sol_04.html">
-     📃 Solution for Exercise M6.04
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +1002,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Evaluating model performance
  </span>
@@ -1001,7 +1025,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_baseline.html">
-     Comparing results with baseline and chance level
+     Comparing model performance with a simple baseline
     </a>
    </li>
    <li class="toctree-l2">
@@ -1032,28 +1056,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_03.html">
-     📝 Introductory exercise regarding stratification
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_stratification.html">
      Stratification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_04.html">
-     📝 Introductory exercise for sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_grouping.html">
      Sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_05.html">
-     📝 Introductory exercise for non i.i.d. data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1170,7 +1179,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Feature selection
  </span>
@@ -1224,7 +1233,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Interpretation
  </span>
@@ -1241,7 +1250,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -1299,6 +1308,16 @@
    Acknowledgement
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/notebook_timings.html">
+   Notebook timings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/toc_redirect.html">
+   Table of contents
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1345,7 +1364,7 @@
                 data-placement="left">.py</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1398,12 +1417,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-preparation">
@@ -1415,11 +1434,6 @@
    Model fitting with preprocessing
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model-evaluation-using-cross-validation">
-   Model evaluation using cross-validation
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -1428,19 +1442,45 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Preprocessing for numerical features</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-preparation">
+   Data preparation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-fitting-with-preprocessing">
+   Model fitting with preprocessing
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="preprocessing-for-numerical-features">
+  <div class="tex2jax_ignore mathjax_ignore section" id="preprocessing-for-numerical-features">
 <h1>Preprocessing for numerical features<a class="headerlink" href="#preprocessing-for-numerical-features" title="Permalink to this headline">¶</a></h1>
 <p>In this notebook, we will still use only numerical features.</p>
 <p>We will introduce these new aspects:</p>
 <ul class="simple">
 <li><p>an example of preprocessing, namely <strong>scaling numerical variables</strong>;</p></li>
 <li><p>using a scikit-learn <strong>pipeline</strong> to chain preprocessing and model
-training;</p></li>
-<li><p>assessing the statistical performance of our model via <strong>cross-validation</strong>
-instead of a single train-test split.</p></li>
+training.</p></li>
 </ul>
 <div class="section" id="data-preparation">
 <h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
@@ -1633,7 +1673,7 @@ the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 {color: black;background-color: white;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 pre{padding: 0;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-toggleable {background-color: white;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-estimator:hover {background-color: #d4ebff;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-item {z-index: 1;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-parallel-item:only-child::after {width: 0;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-3cdab213-c2fa-4e8d-a448-3ff29e934434 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-3cdab213-c2fa-4e8d-a448-3ff29e934434" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="666159ee-cdd7-4757-af07-f131643ae62e" type="checkbox" checked><label class="sk-toggleable__label" for="666159ee-cdd7-4757-af07-f131643ae62e">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-fccd9000-dcea-4390-83fe-2496509c602c {color: black;background-color: white;}#sk-fccd9000-dcea-4390-83fe-2496509c602c pre{padding: 0;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-toggleable {background-color: white;}#sk-fccd9000-dcea-4390-83fe-2496509c602c label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-fccd9000-dcea-4390-83fe-2496509c602c label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-fccd9000-dcea-4390-83fe-2496509c602c label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-fccd9000-dcea-4390-83fe-2496509c602c input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-fccd9000-dcea-4390-83fe-2496509c602c input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-fccd9000-dcea-4390-83fe-2496509c602c input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-estimator:hover {background-color: #d4ebff;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-item {z-index: 1;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-parallel-item:only-child::after {width: 0;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-fccd9000-dcea-4390-83fe-2496509c602c div.sk-text-repr-fallback {display: none;}</style><div id="sk-fccd9000-dcea-4390-83fe-2496509c602c" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>StandardScaler()</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="f7d6e699-c02e-4fd5-ac00-f40288d9fb4d" type="checkbox" checked><label for="f7d6e699-c02e-4fd5-ac00-f40288d9fb4d" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">fit</span></code> method for transformers is similar to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method for
 predictors. The main difference is that the former has a single argument (the
@@ -1829,7 +1869,36 @@ successively <code class="docutils literal notranslate"><span class="pre">fit</s
 </table>
 </div></div></div>
 </div>
-<p>We can easily combine these sequential operations with a scikit-learn
+<p>Notice that the mean of all the columns is close to 0 and the standard deviation
+in all cases is close to 1.
+We can also visualize the effect of <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> using a jointplot to show
+both the histograms of the distributions and a scatterplot of any pair of numerical
+features at the same time. We can observe that <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> does not change
+the structure of the data itself but the axes get shifted and scaled.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>  <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># number of points to visualize to have a clearer plot</span>
+<span class="n">num_points_to_plot</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_train</span><span class="p">[:</span><span class="n">num_points_to_plot</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;age&quot;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="n">marginal_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Jointplot of &#39;age&#39; vs &#39;hours-per-week&#39; </span><span class="se">\n</span><span class="s2">before StandardScaler&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_train_scaled</span><span class="p">[:</span><span class="n">num_points_to_plot</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;age&quot;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="n">marginal_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Jointplot of &#39;age&#39; vs &#39;hours-per-week&#39; </span><span class="se">\n</span><span class="s2">after StandardScaler&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_numerical_pipeline_scaling_24_0.png" src="../_images/02_numerical_pipeline_scaling_24_0.png" />
+<img alt="../_images/02_numerical_pipeline_scaling_24_1.png" src="../_images/02_numerical_pipeline_scaling_24_1.png" />
+</div>
+</div>
+<p>We can easily combine sequential operations with a scikit-learn
 <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>, which chains together operations and is used as any other
 classifier or regressor. The helper function <code class="docutils literal notranslate"><span class="pre">make_pipeline</span></code> will create a
 <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>: it takes as arguments the successive transformations to perform,
@@ -1846,8 +1915,9 @@ followed by the classifier or regressor model.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 {color: black;background-color: white;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 pre{padding: 0;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-toggleable {background-color: white;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-item {z-index: 1;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-parallel-item:only-child::after {width: 0;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-ea407ab0-b353-4f5c-8e62-8c55b0700ff1" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2dd71a55-00fa-4f96-aa12-41e859f92032" type="checkbox" ><label class="sk-toggleable__label" for="2dd71a55-00fa-4f96-aa12-41e859f92032">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
-                ('logisticregression', LogisticRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="7a309b30-e68e-457a-9658-4d16655e8282" type="checkbox" ><label class="sk-toggleable__label" for="7a309b30-e68e-457a-9658-4d16655e8282">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="87aff55b-4431-4e84-b0a9-6ccbe48419e4" type="checkbox" ><label class="sk-toggleable__label" for="87aff55b-4431-4e84-b0a9-6ccbe48419e4">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression()</pre></div></div></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b {color: black;background-color: white;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b pre{padding: 0;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-toggleable {background-color: white;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-estimator:hover {background-color: #d4ebff;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-item {z-index: 1;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-parallel-item:only-child::after {width: 0;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-bdfbedb8-b474-4cfc-b497-05ea208f591b div.sk-text-repr-fallback {display: none;}</style><div id="sk-bdfbedb8-b474-4cfc-b497-05ea208f591b" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;standardscaler&#x27;, StandardScaler()),
+                (&#x27;logisticregression&#x27;, LogisticRegression())])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="d9ebfaac-f697-4700-80d3-3d73eef5c980" type="checkbox" ><label for="d9ebfaac-f697-4700-80d3-3d73eef5c980" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;standardscaler&#x27;, StandardScaler()),
+                (&#x27;logisticregression&#x27;, LogisticRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="482919d3-67d0-4aaa-9254-87e27bf18a36" type="checkbox" ><label for="482919d3-67d0-4aaa-9254-87e27bf18a36" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b9c9d14d-dbd3-4230-b313-de056f325d38" type="checkbox" ><label for="b9c9d14d-dbd3-4230-b313-de056f325d38" class="sk-toggleable__label sk-toggleable__label-arrow">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression()</pre></div></div></div></div></div></div></div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">make_pipeline</span></code> function did not require us to give a name to each step.
 Indeed, it was automatically assigned based on the name of the classes
@@ -1912,7 +1982,7 @@ the predictor that will output the predicted target by calling its method
 <code class="docutils literal notranslate"><span class="pre">predict</span></code>.</p>
 <p>As a shorthand, we can check the score of the full predictive pipeline
 calling the method <code class="docutils literal notranslate"><span class="pre">model.score</span></code>. Thus, let’s check the computational and
-statistical performance of such a predictive pipeline.</p>
+generalization performance of such a predictive pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
@@ -1924,7 +1994,7 @@ statistical performance of such a predictive pipeline.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy using a Pipeline is 0.807 with a fitting time of 0.102 seconds in 12 iterations
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy using a Pipeline is 0.807 with a fitting time of 0.098 seconds in 12 iterations
 </pre></div>
 </div>
 </div>
@@ -1952,130 +2022,28 @@ the previous notebook which did not scale features.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy using a LogisticRegression is 0.807 with a fitting time of 0.230 seconds in 59 iterations
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy using a LogisticRegression is 0.807 with a fitting time of 0.218 seconds in 59 iterations
 </pre></div>
 </div>
 </div>
 </div>
 <p>We see that scaling the data before training the logistic regression was
 beneficial in terms of computational performance. Indeed, the number of
-iterations decreased as well as the training time. The statistical
+iterations decreased as well as the training time. The generalization
 performance did not change since both models converged.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Working with non-scaled data will potentially force the algorithm to iterate
 more as we showed in the example above. There is also the catastrophic
-scenario where the number of required iterations are more than the maximum
+scenario where the number of required iterations is larger than the maximum
 number of iterations allowed by the predictor (controlled by the <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>)
 parameter. Therefore, before increasing <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>, make sure that the data
 are well scaled.</p>
 </div>
-</div>
-<div class="section" id="model-evaluation-using-cross-validation">
-<h2>Model evaluation using cross-validation<a class="headerlink" href="#model-evaluation-using-cross-validation" title="Permalink to this headline">¶</a></h2>
-<p>In the previous example, we split the original data into a training set and a
-testing set. This strategy has several issues: in a setting where the amount
-of data is small, the subset used to train or test will be small. Besides, a
-single split does not give information regarding the confidence of the
-results obtained.</p>
-<p>Instead, we can use cross-validation. Cross-validation consists of repeating
-the procedure such that the training and testing sets are different each
-time. Statistical performance metrics are collected for each repetition and
-then aggregated. As a result we can get an estimate of the variability of the
-model’s statistical performance.</p>
-<p>Note that there exists several cross-validation strategies, each of them
-defines how to repeat the <code class="docutils literal notranslate"><span class="pre">fit</span></code>/<code class="docutils literal notranslate"><span class="pre">score</span></code> procedure. In this section, we will
-use the K-fold strategy: the entire dataset is split into <code class="docutils literal notranslate"><span class="pre">K</span></code> partitions. The
-<code class="docutils literal notranslate"><span class="pre">fit</span></code>/<code class="docutils literal notranslate"><span class="pre">score</span></code> procedure is repeated <code class="docutils literal notranslate"><span class="pre">K</span></code> times where at each iteration <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">-</span> <span class="pre">1</span></code>
-partitions are used to fit the model and <code class="docutils literal notranslate"><span class="pre">1</span></code> partition is used to score. The
-figure below illustrates this K-fold strategy.</p>
-<p><img alt="Cross-validation diagram" src="../_images/cross_validation_diagram.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This figure shows the particular case of K-fold cross-validation strategy.
-As mentioned earlier, there are a variety of different cross-validation
-strategies. Some of these aspects will be covered in more details in future
-notebooks.</p>
-</div>
-<p>For each cross-validation split, the procedure trains a model on all the red
-samples and evaluate the score of the model on the blue samples.
-Cross-validation is therefore computationally intensive because it requires
-training several models instead of one.</p>
-<p>In scikit-learn, the function <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> allows to do cross-validation
-and you need to pass it the model, the data, and the target. Since there
-exists several cross-validation strategies, <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> takes a
-parameter <code class="docutils literal notranslate"><span class="pre">cv</span></code> which defines the splitting strategy.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">LogisticRegression</span><span class="p">())</span>
-<span class="n">cv_result</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_numeric</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">cv_result</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.06 s, sys: 324 ms, total: 1.38 s
-Wall time: 733 ms
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.10920024, 0.10610175, 0.10538816, 0.10578609, 0.10568666]),
- &#39;score_time&#39;: array([0.0220902 , 0.02149892, 0.02257156, 0.02235389, 0.02197981]),
- &#39;test_score&#39;: array([0.79557785, 0.80049135, 0.79965192, 0.79873055, 0.80436118])}
-</pre></div>
-</div>
-</div>
-</div>
-<p>The output of <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> is a Python dictionary, which by default
-contains three entries: (i) the time to train the model on the training data
-for each fold, (ii) the time to predict with the model on the testing data
-for each fold, and (iii) the default score on the testing data for each fold.</p>
-<p>Setting <code class="docutils literal notranslate"><span class="pre">cv=5</span></code> created 5 distinct splits to get 5 variations for the training
-and testing sets. Each training set is used to fit one model which is then
-scored on the matching test set. This strategy is called K-fold
-cross-validation where <code class="docutils literal notranslate"><span class="pre">K</span></code> corresponds to the number of splits.</p>
-<p>Note that by default the <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> function discards the 5 models that
-were trained on the different overlapping subset of the dataset. The goal of
-cross-validation is not to train a model, but rather to estimate
-approximately the generalization performance of a model that would have been
-trained to the full training set, along with an estimate of the variability
-(uncertainty on the generalization accuracy).</p>
-<p>You can pass additional parameters to <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> to get more
-information, for instance training scores. These features will be covered in
-a future notebook.</p>
-<p>Let’s extract the test scores from the <code class="docutils literal notranslate"><span class="pre">cv_result</span></code> dictionary and compute
-the mean accuracy and the variation of the accuracy across folds.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cv_result</span><span class="p">[</span><span class="s2">&quot;test_score&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean cross-validation accuracy is: &quot;</span>
-      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean cross-validation accuracy is: 0.800 +/- 0.003
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note that by computing the standard-deviation of the cross-validation scores,
-we can estimate the uncertainty of our model statistical performance. This is
-the main advantage of cross-validation and can be crucial in practice, for
-example when comparing different models to figure out whether one is better
-than the other or whether the statistical performance differences are within
-the uncertainty.</p>
-<p>In this particular case, only the first 2 decimals seem to be trustworthy. If
-you go up in this notebook, you can check that the performance we get
-with cross-validation is compatible with the one from a single train-test
-split.</p>
-<p>In this notebook we have:</p>
+<p>In this notebook we:</p>
 <ul class="simple">
-<li><p>seen the importance of <strong>scaling numerical variables</strong>;</p></li>
-<li><p>used a <strong>pipeline</strong> to chain scaling and logistic regression training;</p></li>
-<li><p>assessed the statistical performance of our model via <strong>cross-validation</strong>.</p></li>
+<li><p>saw the importance of <strong>scaling numerical variables</strong>;</p></li>
+<li><p>used a <strong>pipeline</strong> to chain scaling and logistic regression training.</p></li>
 </ul>
 </div>
 </div>
@@ -2102,25 +2070,35 @@ split.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02_numerical_pipeline_sol_01.html" title="previous page">📃 Solution for Exercise M1.03</a>
-    <a class='right-next' id="next-link" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html" title="next page">✅ Quiz M1.02</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_numerical_pipeline_sol_01.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">📃 Solution for Exercise M1.03</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🎥 Validation of a model</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By scikit-learn developers<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            <div>
+    <footer class="footer">
+  <p>
+    
+      By scikit-learn developers<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        <div>
    <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">Register</a>
   and get the full "Machine learning in Python with scikit-learn" MOOC experience!</br>
   Brought to you by
@@ -2130,18 +2108,16 @@ split.</p>
   with many thanks to the <a href="https://scikit-learn.org">scikit-learn</a> community as a whole!
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

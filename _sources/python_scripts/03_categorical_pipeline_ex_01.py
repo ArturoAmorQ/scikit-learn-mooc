@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
@@ -5,7 +6,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.11.5
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -21,7 +22,7 @@
 #
 # To do so, let's try to use `OrdinalEncoder` to preprocess the categorical
 # variables. This preprocessor is assembled in a pipeline with
-# `LogisticRegression`. The statistical performance of the pipeline can be
+# `LogisticRegression`. The generalization performance of the pipeline can be
 # evaluated by cross-validation and then compared to the score obtained when
 # using `OneHotEncoder` or to some other baseline score.
 #
@@ -52,7 +53,6 @@ categorical_columns = categorical_columns_selector(data)
 data_categorical = data[categorical_columns]
 
 # %% [markdown]
-# We filter our dataset that it contains only categorical features.
 # Define a scikit-learn pipeline composed of an `OrdinalEncoder` and a
 # `LogisticRegression` classifier.
 #
@@ -72,6 +72,17 @@ from sklearn.linear_model import LogisticRegression
 # %% [markdown]
 # Your model is now defined. Evaluate it using a cross-validation using
 # `sklearn.model_selection.cross_validate`.
+#
+# ```{note}
+# Be aware that if an error happened during the cross-validation,
+# `cross_validate` will raise a warning and return NaN (Not a Number)
+# as scores.  To make it raise a standard Python exception with a traceback,
+# you can pass the `error_score="raise"` argument in the call to
+# `cross_validate`. An exception will be raised instead of a warning at the first
+# encountered problem  and `cross_validate` will stop right away instead of
+# returning NaN values. This is particularly handy when developing
+# complex machine learning pipelines.
+# ```
 
 # %%
 from sklearn.model_selection import cross_validate
@@ -79,7 +90,7 @@ from sklearn.model_selection import cross_validate
 # Write your code here.
 
 # %% [markdown]
-# Now, we would like to compare the statistical performance of our previous
+# Now, we would like to compare the generalization performance of our previous
 # model with a new model where instead of using an `OrdinalEncoder`, we will
 # use a `OneHotEncoder`. Repeat the model evaluation using cross-validation.
 # Compare the score of both models and conclude on the impact of choosing a

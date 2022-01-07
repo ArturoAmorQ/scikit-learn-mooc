@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The framework and why do we need it &#8212; Scikit-learn course</title>
+    <title>Cross-validation framework &#8212; Scikit-learn course</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,10 +43,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sklearn_mooc.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,9 +57,12 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="✅ Quiz M2.01" href="../overfit/overfitting_vs_under_fitting_quiz_m2_01.html" />
-    <link rel="prev" title="📰 Overfitting and Underfitting" href="../overfit/overfitting_vs_under_fitting_slides.html" />
+    <link rel="prev" title="🎥 Overfitting and Underfitting" href="../overfit/overfitting_vs_under_fitting_slides.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/scikit-learn-logo.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Machine Learning Concepts
  </span>
@@ -95,7 +109,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_concepts/slides.html">
-   📰 Introducing machine-learning concepts
+   🎥 Introducing machine-learning concepts
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The predictive modeling pipeline
  </span>
@@ -193,6 +207,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html">
+     🎥 Validation of a model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_cross_validation.html">
+     Model evaluation using cross-validation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html">
      ✅ Quiz M1.02
     </a>
@@ -240,6 +264,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_video.html">
+     🎥 Visualizing scikit-learn pipelines in Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_quiz_m1_03.html">
      ✅ Quiz M1.03
     </a>
@@ -257,7 +286,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Selecting the best model
  </span>
@@ -280,12 +309,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/overfitting_vs_under_fitting_slides.html">
-     📰 Overfitting and Underfitting
+     🎥 Overfitting and Underfitting
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     The framework and why do we need it
+     Cross-validation framework
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,7 +336,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/learning_validation_curves_slides.html">
-     📰 Comparing train and test errors
+     🎥 Comparing train and test errors
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,7 +378,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/bias_vs_variance_slides.html">
-     📰 Bias versus Variance
+     🎥 Bias versus Variance
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,7 +399,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Hyperparameter tuning
  </span>
@@ -434,8 +463,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../tuning/parameter_tuning_parallel_plot_video.html">
+     🎥 Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameter_tuning_parallel_plot.html">
+     Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="parameter_tuning_nested.html">
-     Cross-validation and hyperparameter tuning
+     Evaluation and hyperparameter tuning
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,7 +505,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Linear models
  </span>
@@ -489,7 +528,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/linear_models_slides.html">
-     📰 Intuitions on linear models
+     🎥 Intuitions on linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -590,12 +629,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/regularized_linear_models_slides.html">
-     📰 Intuitions on regularized linear models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04a.html">
-     ✅ Quiz M4.04a
+     🎥 Intuitions on regularized linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -614,8 +648,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04b.html">
-     ✅ Quiz M4.04b
+    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04.html">
+     ✅ Quiz M4.04
     </a>
    </li>
   </ul>
@@ -668,7 +702,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Decision tree models
  </span>
@@ -691,7 +725,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../trees/slides.html">
-     📰 Intuitions on tree-based models
+     🎥 Intuitions on tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -798,7 +832,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Ensemble of models
  </span>
@@ -821,7 +855,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ensemble/slides.html">
-     📰 Intuitions on ensemble of tree-based models
+     🎥 Intuitions on ensemble of tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -858,7 +892,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_01.html">
-     📃 Solution of Exercise M6.01
+     📃 Solution for Exercise M6.01
     </a>
    </li>
    <li class="toctree-l2">
@@ -899,6 +933,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ensemble_gradient_boosting.html">
+     Gradient-boosting decision tree (GBDT)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ensemble_ex_03.html">
      📝 Exercise M6.03
     </a>
@@ -906,21 +945,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_03.html">
      📃 Solution for Exercise M6.03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_gradient_boosting.html">
-     Gradient-boosting decision tree (GBDT)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_ex_04.html">
-     📝 Exercise M6.04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_sol_04.html">
-     📃 Solution for Exercise M6.04
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +1002,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Evaluating model performance
  </span>
@@ -1001,7 +1025,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_baseline.html">
-     Comparing results with baseline and chance level
+     Comparing model performance with a simple baseline
     </a>
    </li>
    <li class="toctree-l2">
@@ -1032,28 +1056,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_03.html">
-     📝 Introductory exercise regarding stratification
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_stratification.html">
      Stratification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_04.html">
-     📝 Introductory exercise for sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_grouping.html">
      Sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_05.html">
-     📝 Introductory exercise for non i.i.d. data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1170,7 +1179,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Feature selection
  </span>
@@ -1224,7 +1233,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Interpretation
  </span>
@@ -1241,7 +1250,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -1299,6 +1308,16 @@
    Acknowledgement
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/notebook_timings.html">
+   Notebook timings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/toc_redirect.html">
+   Table of contents
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1345,7 +1364,7 @@
                 data-placement="left">.py</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1381,12 +1400,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#training-error-vs-testing-error">
@@ -1421,11 +1440,54 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cross-validation framework</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-error-vs-testing-error">
+   Training error vs testing error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-of-the-cross-validation-estimates">
+   Stability of the cross-validation estimates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-detail-regarding-cross-validate">
+   More detail regarding
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cross_validate
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="the-framework-and-why-do-we-need-it">
-<h1>The framework and why do we need it<a class="headerlink" href="#the-framework-and-why-do-we-need-it" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="cross-validation-framework">
+<h1>Cross-validation framework<a class="headerlink" href="#cross-validation-framework" title="Permalink to this headline">¶</a></h1>
 <p>In the previous notebooks, we introduce some concepts regarding the
 evaluation of predictive models. While this section could be slightly
 redundant, we intend to go into details into the cross-validation framework.</p>
@@ -1471,26 +1533,32 @@ California Housing dataset
     :Number of Attributes: 8 numeric, predictive attributes and the target
 
     :Attribute Information:
-        - MedInc        median income in block
-        - HouseAge      median house age in block
-        - AveRooms      average number of rooms
-        - AveBedrms     average number of bedrooms
-        - Population    block population
-        - AveOccup      average house occupancy
-        - Latitude      house block latitude
-        - Longitude     house block longitude
+        - MedInc        median income in block group
+        - HouseAge      median house age in block group
+        - AveRooms      average number of rooms per household
+        - AveBedrms     average number of bedrooms per household
+        - Population    block group population
+        - AveOccup      average number of household members
+        - Latitude      block group latitude
+        - Longitude     block group longitude
 
     :Missing Attribute Values: None
 
 This dataset was obtained from the StatLib repository.
-http://lib.stat.cmu.edu/datasets/
+https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html
 
-The target variable is the median house value for California districts.
+The target variable is the median house value for California districts,
+expressed in hundreds of thousands of dollars ($100,000).
 
 This dataset was derived from the 1990 U.S. census, using one row per census
 block group. A block group is the smallest geographical unit for which the U.S.
 Census Bureau publishes sample data (a block group typically has a population
 of 600 to 3,000 people).
+
+An household is a group of people residing within a home. Since the average
+number of rooms and bedrooms in this dataset are provided per household, these
+columns may take surpinsingly large values for block groups with few households
+and many empty houses, such as vacation resorts.
 
 It can be downloaded/loaded using the
 :func:`sklearn.datasets.fetch_california_housing` function.
@@ -1641,7 +1709,7 @@ Appendix - Datasets description section at the end of this MOOC.</p>
 </div>
 </div>
 </div>
-<p>After training the regressor, we would like to know its potential statistical
+<p>After training the regressor, we would like to know its potential generalization
 performance once deployed in production. For this purpose, we use the mean
 absolute error, which gives us an error in the native unit, i.e. k$.</p>
 <div class="cell docutils container">
@@ -1750,29 +1818,41 @@ it was used in a production environment.</p>
 <h2>Stability of the cross-validation estimates<a class="headerlink" href="#stability-of-the-cross-validation-estimates" title="Permalink to this headline">¶</a></h2>
 <p>When doing a single train-test split we don’t give any indication regarding
 the robustness of the evaluation of our predictive model: in particular, if
-the test set is small, this estimate of the testing error will be
-unstable and wouldn’t reflect the “true error rate” we would have observed
-with the same model on an unlimited amount of test data.</p>
+the test set is small, this estimate of the testing error will be unstable and
+wouldn’t reflect the “true error rate” we would have observed with the same
+model on an unlimited amount of test data.</p>
 <p>For instance, we could have been lucky when we did our random split of our
 limited dataset and isolated some of the easiest cases to predict in the
 testing set just by chance: the estimation of the testing error would be
 overly optimistic, in this case.</p>
-<p><strong>Cross-validation</strong> allows estimating the robustness of a predictive model
-by repeating the splitting procedure. It will give several training and
-testing errors and thus some <strong>estimate of the variability of the
-model statistical performance</strong>.</p>
-<p>There are different cross-validation strategies, for now we are going to
-focus on one called “shuffle-split”. At each iteration of this strategy we:</p>
+<p><strong>Cross-validation</strong> allows estimating the robustness of a predictive model by
+repeating the splitting procedure. It will give several training and testing
+errors and thus some <strong>estimate of the variability of the model generalization
+performance</strong>.</p>
+<p>There are <a class="reference external" href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators">different cross-validation
+strategies</a>,
+for now we are going to focus on one called “shuffle-split”. At each iteration
+of this strategy we:</p>
 <ul class="simple">
 <li><p>randomly shuffle the order of the samples of a copy of the full dataset;</p></li>
 <li><p>split the shuffled dataset into a train and a test set;</p></li>
 <li><p>train a new model on the train set;</p></li>
 <li><p>evaluate the testing error on the test set.</p></li>
 </ul>
-<p>We repeat this procedure <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> times. Using <code class="docutils literal notranslate"><span class="pre">n_splits=40</span></code> means that we
-will train 40 models in total and all of them will be discarded: we just
-record their statistical performance on each variant of the test set.</p>
-<p>To evaluate the statistical performance of our regressor, we can use
+<p>We repeat this procedure <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> times. Keep in mind that the computational
+cost increases with <code class="docutils literal notranslate"><span class="pre">n_splits</span></code>.</p>
+<p><img alt="Cross-validation diagram" src="../_images/shufflesplit_diagram.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This figure shows the particular case of <strong>shuffle-split</strong> cross-validation
+strategy using <code class="docutils literal notranslate"><span class="pre">n_splits=5</span></code>.
+For each cross-validation split, the procedure trains a model on all the red
+samples and evaluate the score of the model on the blue samples.</p>
+</div>
+<p>In this case we will set <code class="docutils literal notranslate"><span class="pre">n_splits=40</span></code>, meaning that we will train 40 models
+in total and all of them will be discarded: we just record their
+generalization performance on each variant of the test set.</p>
+<p>To evaluate the generalization performance of our regressor, we can use
 <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html"><code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.cross_validate</span></code></a>
 with a
 <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ShuffleSplit.html"><code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.ShuffleSplit</span></code></a>
@@ -1827,32 +1907,32 @@ it into a pandas dataframe to ease visualization and manipulation.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.120396</td>
-      <td>0.003622</td>
+      <td>0.184804</td>
+      <td>0.004648</td>
       <td>-46.909797</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.129225</td>
-      <td>0.004960</td>
+      <td>0.191704</td>
+      <td>0.004308</td>
       <td>-46.421170</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.145300</td>
-      <td>0.004246</td>
+      <td>0.177788</td>
+      <td>0.004174</td>
       <td>-47.411089</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.134366</td>
-      <td>0.004566</td>
+      <td>0.180421</td>
+      <td>0.004379</td>
       <td>-44.319824</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.136673</td>
-      <td>0.004882</td>
+      <td>0.190856</td>
+      <td>0.005398</td>
       <td>-47.607875</td>
     </tr>
   </tbody>
@@ -1916,71 +1996,71 @@ score.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.120396</td>
-      <td>0.003622</td>
+      <td>0.184804</td>
+      <td>0.004648</td>
       <td>-46.909797</td>
       <td>46.909797</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.129225</td>
-      <td>0.004960</td>
+      <td>0.191704</td>
+      <td>0.004308</td>
       <td>-46.421170</td>
       <td>46.421170</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.145300</td>
-      <td>0.004246</td>
+      <td>0.177788</td>
+      <td>0.004174</td>
       <td>-47.411089</td>
       <td>47.411089</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.134366</td>
-      <td>0.004566</td>
+      <td>0.180421</td>
+      <td>0.004379</td>
       <td>-44.319824</td>
       <td>44.319824</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.136673</td>
-      <td>0.004882</td>
+      <td>0.190856</td>
+      <td>0.005398</td>
       <td>-47.607875</td>
       <td>47.607875</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.144793</td>
-      <td>0.004238</td>
+      <td>0.189876</td>
+      <td>0.004328</td>
       <td>-45.901300</td>
       <td>45.901300</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.139188</td>
-      <td>0.004241</td>
+      <td>0.206924</td>
+      <td>0.004383</td>
       <td>-46.572767</td>
       <td>46.572767</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.138142</td>
-      <td>0.004547</td>
+      <td>0.180208</td>
+      <td>0.004300</td>
       <td>-46.194585</td>
       <td>46.194585</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.142761</td>
-      <td>0.004238</td>
+      <td>0.179557</td>
+      <td>0.004306</td>
       <td>-45.590236</td>
       <td>45.590236</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.134729</td>
-      <td>0.004276</td>
+      <td>0.181941</td>
+      <td>0.004404</td>
       <td>-45.727998</td>
       <td>45.727998</td>
     </tr>
@@ -1989,8 +2069,8 @@ score.</p>
 </div></div></div>
 </div>
 <p>We get timing information to fit and predict at each cross-validation
-iteration. Also, we get the test score, which corresponds to the testing
-error on each of the splits.</p>
+iteration. Also, we get the test score, which corresponds to the testing error
+on each of the splits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cv_results</span><span class="p">)</span>
@@ -2003,9 +2083,9 @@ error on each of the splits.</p>
 </div>
 </div>
 </div>
-<p>We get 40 entries in our resulting dataframe because we performed 40
-splits. Therefore, we can show the testing error distribution and thus, have
-an estimate of its variability.</p>
+<p>We get 40 entries in our resulting dataframe because we performed 40 splits.
+Therefore, we can show the testing error distribution and thus, have an
+estimate of its variability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -2020,8 +2100,8 @@ an estimate of its variability.</p>
 <img alt="../_images/cross_validation_train_test_32_0.png" src="../_images/cross_validation_train_test_32_0.png" />
 </div>
 </div>
-<p>We observe that the testing error is clustered around 47 k$ and
-ranges from 43 k$ to 50 k$.</p>
+<p>We observe that the testing error is clustered around 47 k$ and ranges from
+43 k$ to 50 k$.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The mean cross-validated testing error is: &quot;</span>
@@ -2049,12 +2129,11 @@ ranges from 43 k$ to 50 k$.</p>
 </div>
 </div>
 <p>Note that the standard deviation is much smaller than the mean: we could
-summarize that our cross-validation estimate of the testing error is
-46.36 +/- 1.17 k$.</p>
+summarize that our cross-validation estimate of the testing error is 46.36 +/-
+1.17 k$.</p>
 <p>If we were to train a single model on the full dataset (without
 cross-validation) and then later had access to an unlimited amount of test
-data, we would expect its true testing error to fall close to that
-region.</p>
+data, we would expect its true testing error to fall close to that region.</p>
 <p>While this information is interesting in itself, it should be contrasted to
 the scale of the natural variability of the vector <code class="docutils literal notranslate"><span class="pre">target</span></code> in our dataset.</p>
 <p>Let us plot the distribution of the target variable:</p>
@@ -2106,7 +2185,7 @@ our model to tag house values without expert supervision.</p>
 <p>During cross-validation, many models are trained and evaluated. Indeed, the
 number of elements in each array of the output of <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> is a
 result from one of these <code class="docutils literal notranslate"><span class="pre">fit</span></code>/<code class="docutils literal notranslate"><span class="pre">score</span></code> procedures. To make it explicit, it is
-possible to retrieve theses fitted models for each of the splits/folds by
+possible to retrieve these fitted models for each of the splits/folds by
 passing the option <code class="docutils literal notranslate"><span class="pre">return_estimator=True</span></code> in <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2116,8 +2195,8 @@ passing the option <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.15046978, 0.14825487, 0.14198208, 0.14574933, 0.14108729]),
- &#39;score_time&#39;: array([0.00313759, 0.00311732, 0.00297523, 0.00310445, 0.00301743]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.22683311, 0.2036798 , 0.19797182, 0.19917345, 0.19322515]),
+ &#39;score_time&#39;: array([0.00304723, 0.00311136, 0.00328112, 0.00291014, 0.00305939]),
  &#39;estimator&#39;: [DecisionTreeRegressor(random_state=0),
   DecisionTreeRegressor(random_state=0),
   DecisionTreeRegressor(random_state=0),
@@ -2175,7 +2254,7 @@ extensively did in the previous notebooks).</p>
 <li><p>the necessity of splitting the data into a train and test set;</p></li>
 <li><p>the meaning of the training and testing errors;</p></li>
 <li><p>the overall cross-validation framework with the possibility to study
-statistical performance variations;</p></li>
+generalization performance variations.</p></li>
 </ul>
 </div>
 </div>
@@ -2202,25 +2281,35 @@ statistical performance variations;</p></li>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../overfit/overfitting_vs_under_fitting_slides.html" title="previous page">📰 Overfitting and Underfitting</a>
-    <a class='right-next' id="next-link" href="../overfit/overfitting_vs_under_fitting_quiz_m2_01.html" title="next page">✅ Quiz M2.01</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../overfit/overfitting_vs_under_fitting_slides.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">🎥 Overfitting and Underfitting</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../overfit/overfitting_vs_under_fitting_quiz_m2_01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">✅ Quiz M2.01</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By scikit-learn developers<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            <div>
+    <footer class="footer">
+  <p>
+    
+      By scikit-learn developers<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        <div>
    <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">Register</a>
   and get the full "Machine learning in Python with scikit-learn" MOOC experience!</br>
   Brought to you by
@@ -2230,18 +2319,16 @@ statistical performance variations;</p></li>
   with many thanks to the <a href="https://scikit-learn.org">scikit-learn</a> community as a whole!
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

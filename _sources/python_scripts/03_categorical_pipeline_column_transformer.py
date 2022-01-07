@@ -55,9 +55,12 @@ categorical_columns = categorical_columns_selector(data)
 # ```{caution}
 # Here, we know that `object` data type is used to represent strings and thus
 # categorical features. Be aware that this is not always the case. Sometimes
-# `object` data type could contain other type of information (e.g. dates that
-# were not parsed) and you should manually introspect the content of your
-# dataframe to not wrongly use `make_column_selector`.
+# `object` data type could contain other types of information, such as dates that
+# were not properly formatted (strings) and yet relate to a quantity of
+# elapsed  time.
+#
+# In a more general scenario you should manually introspect the content of your
+# dataframe not to wrongly use `make_column_selector`.
 # ```
 
 # %% [markdown]
@@ -98,7 +101,7 @@ from sklearn.compose import ColumnTransformer
 
 preprocessor = ColumnTransformer([
     ('one-hot-encoder', categorical_preprocessor, categorical_columns),
-    ('standard-scaler', numerical_preprocessor, numerical_columns)])
+    ('standard_scaler', numerical_preprocessor, numerical_columns)])
 
 # %% [markdown]
 # We can take a minute to represent graphically the structure of a
@@ -114,7 +117,7 @@ preprocessor = ColumnTransformer([
 # * It **transforms each subsets**. A specific transformer is applied to
 #   each subset: it will internally call `fit_transform` or `transform`. The
 #   output of this step is a set of transformed datasets.
-# * It then **concatenate the transformed datasets** into a single dataset.
+# * It then **concatenates the transformed datasets** into a single dataset.
 
 # The important thing is that `ColumnTransformer` is like any other
 # scikit-learn transformer. In particular it can be combined with a classifier
@@ -218,9 +221,9 @@ print("The mean cross-validation accuracy is: "
 # However, it is often useful to check whether more complex models such as an
 # ensemble of decision trees can lead to higher predictive performance. In this
 # section we will use such a model called **gradient-boosting trees** and
-# evaluate its statistical performance. More precisely, the scikit-learn model
+# evaluate its generalization performance. More precisely, the scikit-learn model
 # we will use is called `HistGradientBoostingClassifier`. Note that boosting
-# models will be covered in more details in a future module.
+# models will be covered in more detail in a future module.
 #
 # For tree-based models, the handling of numerical and categorical variables is
 # simpler than for linear models:
@@ -232,7 +235,6 @@ print("The mean cross-validation accuracy is: "
 # is slightly simpler than the one we saw earlier for the `LogisticRegression`:
 
 # %%
-from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.preprocessing import OrdinalEncoder
 
@@ -246,7 +248,7 @@ preprocessor = ColumnTransformer([
 model = make_pipeline(preprocessor, HistGradientBoostingClassifier())
 
 # %% [markdown]
-# Now that we created our model, we can check its statistical performance.
+# Now that we created our model, we can check its generalization performance.
 
 # %%
 # %%time
@@ -271,5 +273,5 @@ model.score(data_test, target_test)
 #   categorical and numerical variables;
 # * used a pipeline to chain the `ColumnTransformer` preprocessing and
 #   logistic regression fitting;
-# * seen that **gradient boosting methods** can outperform **linear
+# * saw that **gradient boosting methods** can outperform **linear
 #   models**.

@@ -1,8 +1,14 @@
 # %% [markdown]
 # # Non i.i.d. data
+#
 # In machine learning, it is quite common to assume that the data are i.i.d,
 # meaning that the generative process does not have any memory of past samples
 # to generate new samples.
+#
+# ```{note}
+# i.i.d is the acronym of "independent and identically distributed"
+# (as in "independent and identically distributed random variables").
+# ```
 #
 # This assumption is usually violated when dealing with time series. A sample
 # depends on past information.
@@ -56,7 +62,7 @@ data_train, data_test, target_train, target_test = train_test_split(
 # %% [markdown]
 # We will use a decision tree regressor that we expect to overfit and thus not
 # generalize to unseen data. We will use a `ShuffleSplit` cross-validation to
-# check the statistical performance of our model.
+# check the generalization performance of our model.
 #
 # Let's first define our model
 
@@ -85,7 +91,7 @@ print(f"The mean R2 is: "
       f"{test_score.mean():.2f} +/- {test_score.std():.2f}")
 
 # %% [markdown]
-# Surprisingly, we get outstanding statistical performance. We will investigate
+# Surprisingly, we get outstanding generalization performance. We will investigate
 # and find the reason for such good results with a model that is expected to
 # fail. We previously mentioned that `ShuffleSplit` is an iterative
 # cross-validation scheme that shuffles data and split. We will simplify this
@@ -99,7 +105,7 @@ target_predicted = regressor.predict(data_test)
 target_predicted = pd.Series(target_predicted, index=target_test.index)
 
 # %% [markdown]
-# Let's check the statistical performance of our model on this split.
+# Let's check the generalization performance of our model on this split.
 
 # %%
 from sklearn.metrics import r2_score
@@ -163,7 +169,7 @@ _ = plt.title("Model predictions using a split without shuffling")
 # %% [markdown]
 # We see that our model cannot predict anything because it doesn't have samples
 # around the testing sample. Let's check how we could have made a proper
-# cross-validation scheme to get a reasonable statistical performance estimate.
+# cross-validation scheme to get a reasonable generalization performance estimate.
 #
 # One solution would be to group the samples into time blocks, e.g. by quarter,
 # and predict each group's information by using information from the other

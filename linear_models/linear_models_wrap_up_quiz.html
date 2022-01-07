@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🏁 Wrap-up quiz &#8212; Scikit-learn course</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,10 +43,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sklearn_mooc.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,7 +59,10 @@
     <link rel="next" title="Main take-away" href="linear_models_module_take_away.html" />
     <link rel="prev" title="✅ Quiz M4.05" href="linear_models_quiz_m4_05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/scikit-learn-logo.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Machine Learning Concepts
  </span>
@@ -95,7 +109,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_concepts/slides.html">
-   📰 Introducing machine-learning concepts
+   🎥 Introducing machine-learning concepts
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The predictive modeling pipeline
  </span>
@@ -193,6 +207,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html">
+     🎥 Validation of a model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_scripts/02_numerical_pipeline_cross_validation.html">
+     Model evaluation using cross-validation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html">
      ✅ Quiz M1.02
     </a>
@@ -240,6 +264,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_video.html">
+     🎥 Visualizing scikit-learn pipelines in Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_quiz_m1_03.html">
      ✅ Quiz M1.03
     </a>
@@ -257,7 +286,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Selecting the best model
  </span>
@@ -280,12 +309,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/overfitting_vs_under_fitting_slides.html">
-     📰 Overfitting and Underfitting
+     🎥 Overfitting and Underfitting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/cross_validation_train_test.html">
-     The framework and why do we need it
+     Cross-validation framework
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,7 +336,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/learning_validation_curves_slides.html">
-     📰 Comparing train and test errors
+     🎥 Comparing train and test errors
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,7 +378,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/bias_vs_variance_slides.html">
-     📰 Bias versus Variance
+     🎥 Bias versus Variance
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,7 +399,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Hyperparameter tuning
  </span>
@@ -434,8 +463,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../tuning/parameter_tuning_parallel_plot_video.html">
+     🎥 Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_scripts/parameter_tuning_parallel_plot.html">
+     Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/parameter_tuning_nested.html">
-     Cross-validation and hyperparameter tuning
+     Evaluation and hyperparameter tuning
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,7 +505,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Linear models
  </span>
@@ -489,7 +528,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_models_slides.html">
-     📰 Intuitions on linear models
+     🎥 Intuitions on linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -590,12 +629,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="regularized_linear_models_slides.html">
-     📰 Intuitions on regularized linear models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="linear_models_quiz_m4_04a.html">
-     ✅ Quiz M4.04a
+     🎥 Intuitions on regularized linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -614,8 +648,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="linear_models_quiz_m4_04b.html">
-     ✅ Quiz M4.04b
+    <a class="reference internal" href="linear_models_quiz_m4_04.html">
+     ✅ Quiz M4.04
     </a>
    </li>
   </ul>
@@ -668,7 +702,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Decision tree models
  </span>
@@ -691,7 +725,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../trees/slides.html">
-     📰 Intuitions on tree-based models
+     🎥 Intuitions on tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -798,7 +832,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Ensemble of models
  </span>
@@ -821,7 +855,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ensemble/slides.html">
-     📰 Intuitions on ensemble of tree-based models
+     🎥 Intuitions on ensemble of tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -858,7 +892,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/ensemble_sol_01.html">
-     📃 Solution of Exercise M6.01
+     📃 Solution for Exercise M6.01
     </a>
    </li>
    <li class="toctree-l2">
@@ -899,6 +933,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../python_scripts/ensemble_gradient_boosting.html">
+     Gradient-boosting decision tree (GBDT)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/ensemble_ex_03.html">
      📝 Exercise M6.03
     </a>
@@ -906,21 +945,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/ensemble_sol_03.html">
      📃 Solution for Exercise M6.03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python_scripts/ensemble_gradient_boosting.html">
-     Gradient-boosting decision tree (GBDT)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python_scripts/ensemble_ex_04.html">
-     📝 Exercise M6.04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python_scripts/ensemble_sol_04.html">
-     📃 Solution for Exercise M6.04
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +1002,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Evaluating model performance
  </span>
@@ -1001,7 +1025,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/cross_validation_baseline.html">
-     Comparing results with baseline and chance level
+     Comparing model performance with a simple baseline
     </a>
    </li>
    <li class="toctree-l2">
@@ -1032,28 +1056,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../python_scripts/cross_validation_ex_03.html">
-     📝 Introductory exercise regarding stratification
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/cross_validation_stratification.html">
      Stratification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../python_scripts/cross_validation_ex_04.html">
-     📝 Introductory exercise for sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../python_scripts/cross_validation_grouping.html">
      Sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python_scripts/cross_validation_ex_05.html">
-     📝 Introductory exercise for non i.i.d. data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1170,7 +1179,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Feature selection
  </span>
@@ -1224,7 +1233,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Interpretation
  </span>
@@ -1241,7 +1250,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -1299,6 +1308,16 @@
    Acknowledgement
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/notebook_timings.html">
+   Notebook timings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/toc_redirect.html">
+   Table of contents
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1345,7 +1364,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1381,32 +1400,43 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>🏁 Wrap-up quiz</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="wrap-up-quiz">
+  <div class="tex2jax_ignore mathjax_ignore section" id="wrap-up-quiz">
 <h1>🏁 Wrap-up quiz<a class="headerlink" href="#wrap-up-quiz" title="Permalink to this headline">¶</a></h1>
 <p><strong>This quiz requires some programming to be answered.</strong></p>
-<p>Open the dataset <code class="docutils literal notranslate"><span class="pre">house_prices.csv</span></code> with the following command:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">ames_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/house_prices.csv&quot;</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">)</span>
+<p>Open the dataset <code class="docutils literal notranslate"><span class="pre">ames_housing_no_missing.csv</span></code> with the following command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">ames_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/ames_housing_no_missing.csv&quot;</span><span class="p">)</span>
 <span class="n">target_name</span> <span class="o">=</span> <span class="s2">&quot;SalePrice&quot;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ames_housing</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">target_name</span><span class="p">)</span>
 <span class="n">target</span> <span class="o">=</span> <span class="n">ames_housing</span><span class="p">[</span><span class="n">target_name</span><span class="p">]</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ames_housing</span></code> is a pandas dataframe. The column “SalePrice” contains the
-target variable. Note that we instructed pandas to treat the character “?” as a
-marker for cells with missing values also known as “null” values.</p>
+target variable.</p>
 <p>To simplify this exercise, we will only used the numerical features defined
 below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_features</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_features</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;LotFrontage&quot;</span><span class="p">,</span> <span class="s2">&quot;LotArea&quot;</span><span class="p">,</span> <span class="s2">&quot;MasVnrArea&quot;</span><span class="p">,</span> <span class="s2">&quot;BsmtFinSF1&quot;</span><span class="p">,</span> <span class="s2">&quot;BsmtFinSF2&quot;</span><span class="p">,</span>
     <span class="s2">&quot;BsmtUnfSF&quot;</span><span class="p">,</span> <span class="s2">&quot;TotalBsmtSF&quot;</span><span class="p">,</span> <span class="s2">&quot;1stFlrSF&quot;</span><span class="p">,</span> <span class="s2">&quot;2ndFlrSF&quot;</span><span class="p">,</span> <span class="s2">&quot;LowQualFinSF&quot;</span><span class="p">,</span>
     <span class="s2">&quot;GrLivArea&quot;</span><span class="p">,</span> <span class="s2">&quot;BedroomAbvGr&quot;</span><span class="p">,</span> <span class="s2">&quot;KitchenAbvGr&quot;</span><span class="p">,</span> <span class="s2">&quot;TotRmsAbvGrd&quot;</span><span class="p">,</span> <span class="s2">&quot;Fireplaces&quot;</span><span class="p">,</span>
@@ -1422,17 +1452,14 @@ Use a 10-fold cross-validation and pass the argument <code class="docutils liter
 <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.cross_validate</span></code> to access all fitted estimators fitted
 on each fold. As we saw in the previous notebooks, you will have to use a
 <code class="docutils literal notranslate"><span class="pre">sklearn.preprocessing.StandardScaler</span></code> to scale the data before passing it to
-the regressor. Also, some missing data are present in the different columns.
-You can use a <code class="docutils literal notranslate"><span class="pre">sklearn.impute.SimpleImputer</span></code> with the default parameters to
-impute missing data. Thus, you can create a model that will <strong>pipeline the
-scaler, followed by the imputer, followed by the linear regression</strong>.</p>
+the regressor.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>What is the order of magnitude of the extremum weight values over all the features:</p>
+<p>How large is the weight with the largest absolute value in this model?</p>
 <ul class="simple">
-<li><p>a) 1e4</p></li>
-<li><p>b) 1e6</p></li>
-<li><p>c) 1e18</p></li>
+<li><p>a) Lower than 1.0</p></li>
+<li><p>b) Between 1.0 and 1,000.0</p></li>
+<li><p>c) Larger than 1,000.0</p></li>
 </ul>
 <p><em>Select a single answer</em></p>
 </div>
@@ -1440,11 +1467,11 @@ scaler, followed by the imputer, followed by the linear regression</strong>.</p>
 (<code class="docutils literal notranslate"><span class="pre">sklearn.linear_model.Ridge</span></code>) with the default parameter.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>What magnitude of the extremum weight values for all features?</p>
+<p>What is the value of the weight with the largest absolute value in this model?</p>
 <ul class="simple">
-<li><p>a) 1e4</p></li>
-<li><p>b) 1e6</p></li>
-<li><p>c) 1e18</p></li>
+<li><p>a) Lower than 1.0</p></li>
+<li><p>b) Between 1.0 and 100,000.0</p></li>
+<li><p>c) Larger than 100,000.0</p></li>
 </ul>
 <p><em>Select a single answer</em></p>
 </div>
@@ -1467,7 +1494,7 @@ experiment.</p>
 <ul class="simple">
 <li><p>a) None</p></li>
 <li><p>b) Change completely the order of the feature importance</p></li>
-<li><p>c) The variability of the most important feature reduced</p></li>
+<li><p>c) The standard deviation (across all folds) of the <code class="docutils literal notranslate"><span class="pre">&quot;GarageCars&quot;</span></code> coefficient decreased</p></li>
 </ul>
 <p><em>Select a single answer</em></p>
 </div>
@@ -1483,7 +1510,7 @@ weight?</p>
 <p><em>Select a single answer</em></p>
 </div>
 <p>Now, we will search for the regularization strength that will maximize the
-statistical performance of our predictive model. Fit a
+generalization performance of our predictive model. Fit a
 <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html"><code class="docutils literal notranslate"><span class="pre">sklearn.linear_model.RidgeCV</span></code></a>
 instead of a <code class="docutils literal notranslate"><span class="pre">Ridge</span></code> regressor pass <code class="docutils literal notranslate"><span class="pre">alphas=np.logspace(-1,</span> <span class="pre">3,</span> <span class="pre">num=30)</span></code> to
 explore the effect of changing the regularization strength.</p>
@@ -1512,7 +1539,7 @@ ridge regressors obtained on each fold.</p>
 <p>Now, we will tackle a classification problem instead of a regression problem.
 Load the Adult Census dataset with the following snippet of code and we will
 work only with <strong>numerical features</strong>.</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">adult_census</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/adult-census.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adult_census</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/adult-census.csv&quot;</span><span class="p">)</span>
 <span class="n">target</span> <span class="o">=</span> <span class="n">adult_census</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">adult_census</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">([</span><span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="s2">&quot;floating&quot;</span><span class="p">])</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;education-num&quot;</span><span class="p">])</span>
@@ -1528,16 +1555,6 @@ variable <code class="docutils literal notranslate"><span class="pre">data</span
 <li><p>c) 5</p></li>
 </ul>
 <p><em>Select a single answer</em></p>
-</div>
-<div class="admonition-question admonition">
-<p class="admonition-title">Question</p>
-<p>Are there any missing values in the dataset contained in the variable <code class="docutils literal notranslate"><span class="pre">data</span></code>?</p>
-<ul class="simple">
-<li><p>a) Yes</p></li>
-<li><p>b) No</p></li>
-</ul>
-<p><em>Select a single answer</em></p>
-<p>Hint: you can use <code class="docutils literal notranslate"><span class="pre">df.info()</span></code> to get information regarding each column.</p>
 </div>
 <p>Fit a <code class="docutils literal notranslate"><span class="pre">sklearn.linear_model.LogisticRegression</span></code> classifier using a 10-fold
 cross-validation to assess the performance. Since we are dealing with a linear
@@ -1568,20 +1585,10 @@ increase or decrease of the accuracy score.</p>
 </div>
 <p>Now, we will work with <strong>both numerical and categorical features</strong>. You can
 load Adult Census with the following snippet:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">adult_census</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/adult-census.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adult_census</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../datasets/adult-census.csv&quot;</span><span class="p">)</span>
 <span class="n">target</span> <span class="o">=</span> <span class="n">adult_census</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">adult_census</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;education-num&quot;</span><span class="p">])</span>
 </pre></div>
-</div>
-<div class="admonition-question admonition">
-<p class="admonition-title">Question</p>
-<p>Are there missing values in this dataset?</p>
-<ul class="simple">
-<li><p>a) Yes</p></li>
-<li><p>b) No</p></li>
-</ul>
-<p><em>Select a single answer</em></p>
-<p>Hint: you can use <code class="docutils literal notranslate"><span class="pre">df.info()</span></code> to get information regarding each column.</p>
 </div>
 <p>Create a predictive model where the categorical data should be one-hot encoded,
 the numerical data should be scaled, and the predictor used should be a
@@ -1592,16 +1599,16 @@ logistic regression classifier.</p>
 features?</p>
 <ul class="simple">
 <li><p>a) It gives similar results</p></li>
-<li><p>b) It increases the statistical performance by 0.025</p></li>
-<li><p>c) it increases the statistical performance by 0.05</p></li>
-<li><p>d) it increases the statistical performance by 0.075</p></li>
-<li><p>e) it increases the statistical performance by 0.1</p></li>
+<li><p>b) It increases the generalization performance by 0.025</p></li>
+<li><p>c) It increases the generalization performance by 0.05</p></li>
+<li><p>d) It increases the generalization performance by 0.075</p></li>
+<li><p>e) It increases the generalization performance by 0.1</p></li>
 </ul>
 <p><em>Select a single answer</em></p>
 </div>
 <p>For the following questions, you can use the following snippet to get the
 feature names after the preprocessing performed.</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">preprocessor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">preprocessor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">feature_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">preprocessor</span><span class="o">.</span><span class="n">named_transformers_</span><span class="p">[</span><span class="s2">&quot;onehotencoder&quot;</span><span class="p">]</span>
                              <span class="o">.</span><span class="n">get_feature_names</span><span class="p">(</span><span class="n">categorical_columns</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">feature_names</span> <span class="o">+=</span> <span class="n">numerical_columns</span>
@@ -1655,25 +1662,35 @@ predictive pipeline.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="linear_models_quiz_m4_05.html" title="previous page">✅ Quiz M4.05</a>
-    <a class='right-next' id="next-link" href="linear_models_module_take_away.html" title="next page">Main take-away</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="linear_models_quiz_m4_05.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">✅ Quiz M4.05</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="linear_models_module_take_away.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Main take-away</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By scikit-learn developers<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            <div>
+    <footer class="footer">
+  <p>
+    
+      By scikit-learn developers<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        <div>
    <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">Register</a>
   and get the full "Machine learning in Python with scikit-learn" MOOC experience!</br>
   Brought to you by
@@ -1683,18 +1700,16 @@ predictive pipeline.</p>
   with many thanks to the <a href="https://scikit-learn.org">scikit-learn</a> community as a whole!
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

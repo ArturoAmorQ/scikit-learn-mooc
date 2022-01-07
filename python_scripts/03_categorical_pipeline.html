@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encoding of categorical variables &#8212; Scikit-learn course</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,10 +43,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sklearn_mooc.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,7 +59,10 @@
     <link rel="next" title="📝 Exercise M1.04" href="03_categorical_pipeline_ex_01.html" />
     <link rel="prev" title="Handling categorical data" href="../predictive_modeling_pipeline/03_categorical_pipeline_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/scikit-learn-logo.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Machine Learning Concepts
  </span>
@@ -95,7 +109,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_concepts/slides.html">
-   📰 Introducing machine-learning concepts
+   🎥 Introducing machine-learning concepts
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The predictive modeling pipeline
  </span>
@@ -193,6 +207,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html">
+     🎥 Validation of a model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_cross_validation.html">
+     Model evaluation using cross-validation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html">
      ✅ Quiz M1.02
     </a>
@@ -240,6 +264,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_video.html">
+     🎥 Visualizing scikit-learn pipelines in Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_quiz_m1_03.html">
      ✅ Quiz M1.03
     </a>
@@ -257,7 +286,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Selecting the best model
  </span>
@@ -280,12 +309,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/overfitting_vs_under_fitting_slides.html">
-     📰 Overfitting and Underfitting
+     🎥 Overfitting and Underfitting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_train_test.html">
-     The framework and why do we need it
+     Cross-validation framework
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,7 +336,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/learning_validation_curves_slides.html">
-     📰 Comparing train and test errors
+     🎥 Comparing train and test errors
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,7 +378,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/bias_vs_variance_slides.html">
-     📰 Bias versus Variance
+     🎥 Bias versus Variance
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,7 +399,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Hyperparameter tuning
  </span>
@@ -434,8 +463,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../tuning/parameter_tuning_parallel_plot_video.html">
+     🎥 Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameter_tuning_parallel_plot.html">
+     Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="parameter_tuning_nested.html">
-     Cross-validation and hyperparameter tuning
+     Evaluation and hyperparameter tuning
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,7 +505,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Linear models
  </span>
@@ -489,7 +528,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/linear_models_slides.html">
-     📰 Intuitions on linear models
+     🎥 Intuitions on linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -590,12 +629,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/regularized_linear_models_slides.html">
-     📰 Intuitions on regularized linear models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04a.html">
-     ✅ Quiz M4.04a
+     🎥 Intuitions on regularized linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -614,8 +648,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04b.html">
-     ✅ Quiz M4.04b
+    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04.html">
+     ✅ Quiz M4.04
     </a>
    </li>
   </ul>
@@ -668,7 +702,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Decision tree models
  </span>
@@ -691,7 +725,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../trees/slides.html">
-     📰 Intuitions on tree-based models
+     🎥 Intuitions on tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -798,7 +832,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Ensemble of models
  </span>
@@ -821,7 +855,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ensemble/slides.html">
-     📰 Intuitions on ensemble of tree-based models
+     🎥 Intuitions on ensemble of tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -858,7 +892,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_01.html">
-     📃 Solution of Exercise M6.01
+     📃 Solution for Exercise M6.01
     </a>
    </li>
    <li class="toctree-l2">
@@ -899,6 +933,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ensemble_gradient_boosting.html">
+     Gradient-boosting decision tree (GBDT)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ensemble_ex_03.html">
      📝 Exercise M6.03
     </a>
@@ -906,21 +945,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_03.html">
      📃 Solution for Exercise M6.03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_gradient_boosting.html">
-     Gradient-boosting decision tree (GBDT)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_ex_04.html">
-     📝 Exercise M6.04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_sol_04.html">
-     📃 Solution for Exercise M6.04
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +1002,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Evaluating model performance
  </span>
@@ -1001,7 +1025,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_baseline.html">
-     Comparing results with baseline and chance level
+     Comparing model performance with a simple baseline
     </a>
    </li>
    <li class="toctree-l2">
@@ -1032,28 +1056,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_03.html">
-     📝 Introductory exercise regarding stratification
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_stratification.html">
      Stratification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_04.html">
-     📝 Introductory exercise for sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_grouping.html">
      Sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_05.html">
-     📝 Introductory exercise for non i.i.d. data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1170,7 +1179,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Feature selection
  </span>
@@ -1224,7 +1233,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Interpretation
  </span>
@@ -1241,7 +1250,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -1299,6 +1308,16 @@
    Acknowledgement
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/notebook_timings.html">
+   Notebook timings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/toc_redirect.html">
+   Table of contents
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1345,7 +1364,7 @@
                 data-placement="left">.py</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1398,12 +1417,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#identify-categorical-variables">
@@ -1450,10 +1469,65 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Encoding of categorical variables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identify-categorical-variables">
+   Identify categorical variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-features-based-on-their-data-type">
+   Select features based on their data type
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strategies-to-encode-categories">
+   Strategies to encode categories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encoding-ordinal-categories">
+     Encoding ordinal categories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encoding-nominal-categories-without-assuming-any-order">
+     Encoding nominal categories (without assuming any order)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choosing-an-encoding-strategy">
+     Choosing an encoding strategy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-our-predictive-pipeline">
+   Evaluate our predictive pipeline
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="encoding-of-categorical-variables">
+  <div class="tex2jax_ignore mathjax_ignore section" id="encoding-of-categorical-variables">
 <h1>Encoding of categorical variables<a class="headerlink" href="#encoding-of-categorical-variables" title="Permalink to this headline">¶</a></h1>
 <p>In this notebook, we will present typical ways of dealing with
 <strong>categorical variables</strong> by encoding them, namely <strong>ordinal encoding</strong> and
@@ -1787,46 +1861,6 @@ values by checking the fitted attribute <code class="docutils literal notranslat
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span><span class="o">.</span><span class="n">categories_</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([&#39; ?&#39;, &#39; Federal-gov&#39;, &#39; Local-gov&#39;, &#39; Never-worked&#39;, &#39; Private&#39;,
-        &#39; Self-emp-inc&#39;, &#39; Self-emp-not-inc&#39;, &#39; State-gov&#39;, &#39; Without-pay&#39;],
-       dtype=object),
- array([&#39; 10th&#39;, &#39; 11th&#39;, &#39; 12th&#39;, &#39; 1st-4th&#39;, &#39; 5th-6th&#39;, &#39; 7th-8th&#39;,
-        &#39; 9th&#39;, &#39; Assoc-acdm&#39;, &#39; Assoc-voc&#39;, &#39; Bachelors&#39;, &#39; Doctorate&#39;,
-        &#39; HS-grad&#39;, &#39; Masters&#39;, &#39; Preschool&#39;, &#39; Prof-school&#39;,
-        &#39; Some-college&#39;], dtype=object),
- array([&#39; Divorced&#39;, &#39; Married-AF-spouse&#39;, &#39; Married-civ-spouse&#39;,
-        &#39; Married-spouse-absent&#39;, &#39; Never-married&#39;, &#39; Separated&#39;,
-        &#39; Widowed&#39;], dtype=object),
- array([&#39; ?&#39;, &#39; Adm-clerical&#39;, &#39; Armed-Forces&#39;, &#39; Craft-repair&#39;,
-        &#39; Exec-managerial&#39;, &#39; Farming-fishing&#39;, &#39; Handlers-cleaners&#39;,
-        &#39; Machine-op-inspct&#39;, &#39; Other-service&#39;, &#39; Priv-house-serv&#39;,
-        &#39; Prof-specialty&#39;, &#39; Protective-serv&#39;, &#39; Sales&#39;, &#39; Tech-support&#39;,
-        &#39; Transport-moving&#39;], dtype=object),
- array([&#39; Husband&#39;, &#39; Not-in-family&#39;, &#39; Other-relative&#39;, &#39; Own-child&#39;,
-        &#39; Unmarried&#39;, &#39; Wife&#39;], dtype=object),
- array([&#39; Amer-Indian-Eskimo&#39;, &#39; Asian-Pac-Islander&#39;, &#39; Black&#39;, &#39; Other&#39;,
-        &#39; White&#39;], dtype=object),
- array([&#39; Female&#39;, &#39; Male&#39;], dtype=object),
- array([&#39; ?&#39;, &#39; Cambodia&#39;, &#39; Canada&#39;, &#39; China&#39;, &#39; Columbia&#39;, &#39; Cuba&#39;,
-        &#39; Dominican-Republic&#39;, &#39; Ecuador&#39;, &#39; El-Salvador&#39;, &#39; England&#39;,
-        &#39; France&#39;, &#39; Germany&#39;, &#39; Greece&#39;, &#39; Guatemala&#39;, &#39; Haiti&#39;,
-        &#39; Holand-Netherlands&#39;, &#39; Honduras&#39;, &#39; Hong&#39;, &#39; Hungary&#39;, &#39; India&#39;,
-        &#39; Iran&#39;, &#39; Ireland&#39;, &#39; Italy&#39;, &#39; Jamaica&#39;, &#39; Japan&#39;, &#39; Laos&#39;,
-        &#39; Mexico&#39;, &#39; Nicaragua&#39;, &#39; Outlying-US(Guam-USVI-etc)&#39;, &#39; Peru&#39;,
-        &#39; Philippines&#39;, &#39; Poland&#39;, &#39; Portugal&#39;, &#39; Puerto-Rico&#39;,
-        &#39; Scotland&#39;, &#39; South&#39;, &#39; Taiwan&#39;, &#39; Thailand&#39;, &#39; Trinadad&amp;Tobago&#39;,
-        &#39; United-States&#39;, &#39; Vietnam&#39;, &#39; Yugoslavia&#39;], dtype=object)]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;The dataset encoded contains </span><span class="si">{</span><span class="n">data_encoded</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> features&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1898,7 +1932,7 @@ how the encoding works.</p>
 <p><code class="docutils literal notranslate"><span class="pre">sparse=False</span></code> is used in the <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> for didactic purposes, namely
 easier visualization of the data.</p>
 <p>Sparse matrices are efficient data structures when most of your matrix
-elements are zero. They won’t be covered in details in this course. If you
+elements are zero. They won’t be covered in detail in this course. If you
 want more details about them, you can look at
 <a class="reference external" href="https://scipy-lectures.org/advanced/scipy_sparse/introduction.html#why-sparse-matrices">this</a>.</p>
 </div>
@@ -1907,7 +1941,7 @@ and ones. We can get a better understanding using the associated feature
 names resulting from the transformation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(</span><span class="n">input_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;education&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">(</span><span class="n">input_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;education&quot;</span><span class="p">])</span>
 <span class="n">education_encoded</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">education_encoded</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
 <span class="n">education_encoded</span>
 </pre></div>
@@ -2332,7 +2366,7 @@ returned, for each sample, a 1 to specify which category it belongs to.</p>
 provided by the encoder object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(</span><span class="n">data_categorical</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">(</span><span class="n">data_categorical</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_encoded</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns_encoded</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2515,33 +2549,37 @@ in the original data because some variables such as <code class="docutils litera
 <h3>Choosing an encoding strategy<a class="headerlink" href="#choosing-an-encoding-strategy" title="Permalink to this headline">¶</a></h3>
 <p>Choosing an encoding strategy will depend on the underlying models and the
 type of categories (i.e. ordinal vs. nominal).</p>
-<p>Indeed, using an <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> will output ordinal categories. It means
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In general <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> is the encoding strategy used when the
+downstream models are <strong>linear models</strong> while <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> is often a
+good strategy with <strong>tree-based models</strong>.</p>
+</div>
+<p>Using an <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> will output ordinal categories. This means
 that there is an order in the resulting categories (e.g. <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">2</span></code>). The
 impact of violating this ordering assumption is really dependent on the
 downstream models. Linear models will be impacted by misordered categories
-while tree-based models will not be.</p>
-<p>Thus, in general <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> is the encoding strategy used when the
-downstream models are <strong>linear models</strong> while <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> is used with
-<strong>tree-based models</strong>.</p>
-<p>You still can use an <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> with linear models but you need to be
+while tree-based models will not.</p>
+<p>You can still use an <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> with linear models but you need to be
 sure that:</p>
 <ul class="simple">
 <li><p>the original categories (before encoding) have an ordering;</p></li>
 <li><p>the encoded categories follow the same ordering than the original
 categories.
-The next exercise highlight the issue of misusing <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> with a
-linear model.</p></li>
+The <strong>next exercise</strong> highlights the issue of misusing <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> with
+a linear model.</p></li>
 </ul>
-<p>Also, there is no need to use an <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> even if the original
-categories do not have an given order with tree-based model. It will be
-the purpose of the final exercise of this sequence.</p>
+<p>One-hot encoding categorical variables with high cardinality can cause
+computational inefficiency in tree-based models. Because of this, it is not recommended
+to use <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> in such cases even if the original categories do not
+have a given order. We will show this in the <strong>final exercise</strong> of this sequence.</p>
 </div>
 </div>
 <div class="section" id="evaluate-our-predictive-pipeline">
 <h2>Evaluate our predictive pipeline<a class="headerlink" href="#evaluate-our-predictive-pipeline" title="Permalink to this headline">¶</a></h2>
 <p>We can now integrate this encoder inside a machine learning pipeline like we
 did with numerical data: let’s train a linear classifier on the encoded data
-and check the statistical performance of this machine learning pipeline using
+and check the generalization performance of this machine learning pipeline using
 cross-validation.</p>
 <p>Before we create the pipeline, we have to linger on the <code class="docutils literal notranslate"><span class="pre">native-country</span></code>.
 Let’s recall some statistics regarding this column.</p>
@@ -2577,18 +2615,18 @@ Let’s recall some statistics regarding this column.</p>
  Portugal                         67
  Taiwan                           65
  Iran                             59
- Nicaragua                        49
  Greece                           49
+ Nicaragua                        49
  Peru                             46
  Ecuador                          45
  France                           38
  Ireland                          37
- Thailand                         30
  Hong                             30
+ Thailand                         30
  Cambodia                         28
  Trinadad&amp;Tobago                  27
- Yugoslavia                       23
  Laos                             23
+ Yugoslavia                       23
  Outlying-US(Guam-USVI-etc)       23
  Scotland                         21
  Honduras                         20
@@ -2638,7 +2676,7 @@ to the numerical features, the one-hot encoded categorical features are all
 on the same scale (values are 0 or 1), so they would not benefit from
 scaling. In this case, increasing <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> is the right thing to do.</p>
 </div>
-<p>Finally, we can check the model’s statistical performance only using the
+<p>Finally, we can check the model’s generalization performance only using the
 categorical columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2649,8 +2687,8 @@ categorical columns.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([1.11648297, 1.13122153, 1.0302422 , 1.10437703, 1.06971383]),
- &#39;score_time&#39;: array([0.04242682, 0.03946829, 0.03654385, 0.03783083, 0.03372812]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.92573309, 0.9043169 , 0.96803737, 0.85978031, 0.96519756]),
+ &#39;score_time&#39;: array([0.03867531, 0.03945494, 0.03924608, 0.0413723 , 0.03959227]),
  &#39;test_score&#39;: array([0.83222438, 0.83560242, 0.82872645, 0.83312858, 0.83466421])}
 </pre></div>
 </div>
@@ -2704,25 +2742,35 @@ regression.</p></li>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../predictive_modeling_pipeline/03_categorical_pipeline_index.html" title="previous page">Handling categorical data</a>
-    <a class='right-next' id="next-link" href="03_categorical_pipeline_ex_01.html" title="next page">📝 Exercise M1.04</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../predictive_modeling_pipeline/03_categorical_pipeline_index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Handling categorical data</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="03_categorical_pipeline_ex_01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">📝 Exercise M1.04</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By scikit-learn developers<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            <div>
+    <footer class="footer">
+  <p>
+    
+      By scikit-learn developers<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        <div>
    <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">Register</a>
   and get the full "Machine learning in Python with scikit-learn" MOOC experience!</br>
   Brought to you by
@@ -2732,18 +2780,16 @@ regression.</p></li>
   with many thanks to the <a href="https://scikit-learn.org">scikit-learn</a> community as a whole!
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

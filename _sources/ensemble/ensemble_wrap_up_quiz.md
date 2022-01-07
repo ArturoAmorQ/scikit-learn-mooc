@@ -4,7 +4,7 @@
 
 Open the dataset `blood_transfusion.csv`.
 
-```py
+```python
 import pandas as pd
 
 blood_transfusion = pd.read_csv("../datasets/blood_transfusion.csv")
@@ -48,7 +48,7 @@ _Select a single answer_
 +++
 
 Replace the `DummyClassifier` by a `sklearn.tree.DecisionTreeClassifier` and
-check the statistical performance to answer the question below.
+check the generalization performance to answer the question below.
 
 ```{admonition} Question
 Is a single decision classifier better than a dummy classifier, by an increase
@@ -98,16 +98,6 @@ _Select a single answer_
 Evaluate the performance of a
 `sklearn.ensemble.HistGradientBoostingClassifier`. Enable early-stopping and
 add as many trees as needed.
-
-**Note**: Be aware that you need a specific import when importing the
-`HistGradientBoostingClassifier`:
-
-```py
-# explicitly require this experimental feature
-from sklearn.experimental import enable_hist_gradient_boosting
-# now you can import normally from ensemble
-from sklearn.ensemble import HistGradientBoostingClassifier
-```
 
 ```{admonition} Question
 Is histogram gradient boosting a better classifier considering the mean of

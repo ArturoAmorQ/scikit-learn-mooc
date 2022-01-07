@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hyperparameter tuning by grid-search &#8212; Scikit-learn course</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,10 +43,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sklearn_mooc.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,7 +59,10 @@
     <link rel="next" title="Hyperparameter tuning by randomized-search" href="parameter_tuning_randomized_search.html" />
     <link rel="prev" title="Automated tuning" href="../tuning/parameter_tuning_automated_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/scikit-learn-logo.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Machine Learning Concepts
  </span>
@@ -95,7 +109,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_concepts/slides.html">
-   📰 Introducing machine-learning concepts
+   🎥 Introducing machine-learning concepts
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The predictive modeling pipeline
  </span>
@@ -193,6 +207,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html">
+     🎥 Validation of a model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_cross_validation.html">
+     Model evaluation using cross-validation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html">
      ✅ Quiz M1.02
     </a>
@@ -240,6 +264,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_video.html">
+     🎥 Visualizing scikit-learn pipelines in Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_quiz_m1_03.html">
      ✅ Quiz M1.03
     </a>
@@ -257,7 +286,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Selecting the best model
  </span>
@@ -280,12 +309,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/overfitting_vs_under_fitting_slides.html">
-     📰 Overfitting and Underfitting
+     🎥 Overfitting and Underfitting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_train_test.html">
-     The framework and why do we need it
+     Cross-validation framework
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,7 +336,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/learning_validation_curves_slides.html">
-     📰 Comparing train and test errors
+     🎥 Comparing train and test errors
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,7 +378,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/bias_vs_variance_slides.html">
-     📰 Bias versus Variance
+     🎥 Bias versus Variance
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,7 +399,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Hyperparameter tuning
  </span>
@@ -434,8 +463,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../tuning/parameter_tuning_parallel_plot_video.html">
+     🎥 Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameter_tuning_parallel_plot.html">
+     Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="parameter_tuning_nested.html">
-     Cross-validation and hyperparameter tuning
+     Evaluation and hyperparameter tuning
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,7 +505,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Linear models
  </span>
@@ -489,7 +528,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/linear_models_slides.html">
-     📰 Intuitions on linear models
+     🎥 Intuitions on linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -590,12 +629,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/regularized_linear_models_slides.html">
-     📰 Intuitions on regularized linear models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04a.html">
-     ✅ Quiz M4.04a
+     🎥 Intuitions on regularized linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -614,8 +648,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04b.html">
-     ✅ Quiz M4.04b
+    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04.html">
+     ✅ Quiz M4.04
     </a>
    </li>
   </ul>
@@ -668,7 +702,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Decision tree models
  </span>
@@ -691,7 +725,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../trees/slides.html">
-     📰 Intuitions on tree-based models
+     🎥 Intuitions on tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -798,7 +832,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Ensemble of models
  </span>
@@ -821,7 +855,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ensemble/slides.html">
-     📰 Intuitions on ensemble of tree-based models
+     🎥 Intuitions on ensemble of tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -858,7 +892,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_01.html">
-     📃 Solution of Exercise M6.01
+     📃 Solution for Exercise M6.01
     </a>
    </li>
    <li class="toctree-l2">
@@ -899,6 +933,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ensemble_gradient_boosting.html">
+     Gradient-boosting decision tree (GBDT)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ensemble_ex_03.html">
      📝 Exercise M6.03
     </a>
@@ -906,21 +945,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_03.html">
      📃 Solution for Exercise M6.03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_gradient_boosting.html">
-     Gradient-boosting decision tree (GBDT)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_ex_04.html">
-     📝 Exercise M6.04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_sol_04.html">
-     📃 Solution for Exercise M6.04
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +1002,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Evaluating model performance
  </span>
@@ -1001,7 +1025,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_baseline.html">
-     Comparing results with baseline and chance level
+     Comparing model performance with a simple baseline
     </a>
    </li>
    <li class="toctree-l2">
@@ -1032,28 +1056,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_03.html">
-     📝 Introductory exercise regarding stratification
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_stratification.html">
      Stratification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_04.html">
-     📝 Introductory exercise for sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_grouping.html">
      Sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_05.html">
-     📝 Introductory exercise for non i.i.d. data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1170,7 +1179,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Feature selection
  </span>
@@ -1224,7 +1233,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Interpretation
  </span>
@@ -1241,7 +1250,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -1299,6 +1308,16 @@
    Acknowledgement
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/notebook_timings.html">
+   Notebook timings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/toc_redirect.html">
+   Table of contents
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1345,7 +1364,7 @@
                 data-placement="left">.py</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1381,12 +1400,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#our-predictive-model">
@@ -1406,13 +1425,41 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hyperparameter tuning by grid-search</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-predictive-model">
+   Our predictive model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuning-using-a-grid-search">
+   Tuning using a grid-search
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="hyperparameter-tuning-by-grid-search">
+  <div class="tex2jax_ignore mathjax_ignore section" id="hyperparameter-tuning-by-grid-search">
 <h1>Hyperparameter tuning by grid-search<a class="headerlink" href="#hyperparameter-tuning-by-grid-search" title="Permalink to this headline">¶</a></h1>
 <p>In the previous notebook, we saw that hyperparameters can affect the
-statistical performance of a model. In this notebook, we will show how to
+generalization performance of a model. In this notebook, we will show how to
 optimize hyperparameters using a grid-search approach.</p>
 <div class="section" id="our-predictive-model">
 <h2>Our predictive model<a class="headerlink" href="#our-predictive-model" title="Permalink to this headline">¶</a></h2>
@@ -1596,13 +1643,7 @@ duplicates the information from the <code class="docutils literal notranslate"><
 </div>
 <p>We will define a pipeline as seen in the first module. It will handle both
 numerical and categorical features.</p>
-<p>As we will use a tree-based model as a predictor, here we apply an ordinal
-encoder on the categorical features: it encodes every category with an
-arbitrary integer. For simple models such as linear models, a one-hot encoder
-should be preferred. But for complex models, in particular tree-based models,
-the ordinal encoder is useful as it avoids having high-dimensional
-representations.</p>
-<p>First we select all the categorical columns.</p>
+<p>The first step is to select all the categorical columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">make_column_selector</span> <span class="k">as</span> <span class="n">selector</span>
@@ -1613,7 +1654,16 @@ representations.</p>
 </div>
 </div>
 </div>
-<p>Then we build our ordinal encoder, giving it the known categories.</p>
+<p>Here we will use a tree-based model as a classifier
+(i.e. <code class="docutils literal notranslate"><span class="pre">HistGradientBoostingClassifier</span></code>). That means:</p>
+<ul class="simple">
+<li><p>Numerical variables don’t need scaling;</p></li>
+<li><p>Categorical variables can be dealt with an <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> even if the
+coding order is not meaningful;</p></li>
+<li><p>For tree-based models, the <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> avoids having high-dimensional
+representations.</p></li>
+</ul>
+<p>We now build our <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> by passing it the known categories.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OrdinalEncoder</span>
@@ -1624,14 +1674,14 @@ representations.</p>
 </div>
 </div>
 </div>
-<p>We now use a column transformer with code to select the categorical columns
-and apply to them the ordinal encoder.</p>
+<p>We then use a <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code> to select the categorical columns and
+apply the <code class="docutils literal notranslate"><span class="pre">OrdinalEncoder</span></code> to them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
 
 <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">([</span>
-    <span class="p">(</span><span class="s1">&#39;cat-preprocessor&#39;</span><span class="p">,</span> <span class="n">categorical_preprocessor</span><span class="p">,</span> <span class="n">categorical_columns</span><span class="p">)],</span>
+    <span class="p">(</span><span class="s1">&#39;cat_preprocessor&#39;</span><span class="p">,</span> <span class="n">categorical_preprocessor</span><span class="p">,</span> <span class="n">categorical_columns</span><span class="p">)],</span>
     <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1641,9 +1691,7 @@ and apply to them the ordinal encoder.</p>
 predict whether or not a person earns more than 50 k$ a year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for the moment this line is required to import HistGradientBoostingClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_hist_gradient_boosting</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">HistGradientBoostingClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">HistGradientBoostingClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -1655,33 +1703,45 @@ predict whether or not a person earns more than 50 k$ a year.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 {color: black;background-color: white;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 pre{padding: 0;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-toggleable {background-color: white;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-estimator:hover {background-color: #d4ebff;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-item {z-index: 1;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-parallel-item:only-child::after {width: 0;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-5a77e4da-902c-40a0-aac1-ace327261ca5 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-5a77e4da-902c-40a0-aac1-ace327261ca5" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8f34df5e-1cc9-48b0-aeae-c63e07dbf0b7" type="checkbox" ><label class="sk-toggleable__label" for="8f34df5e-1cc9-48b0-aeae-c63e07dbf0b7">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocessor',
-                 ColumnTransformer(remainder='passthrough', sparse_threshold=0,
-                                   transformers=[('cat-preprocessor',
-                                                  OrdinalEncoder(handle_unknown='use_encoded_value',
+<div class="output text_html"><style>#sk-533f405b-f8ae-430f-ac03-766a9a8f743a {color: black;background-color: white;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a pre{padding: 0;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-toggleable {background-color: white;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-estimator:hover {background-color: #d4ebff;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-item {z-index: 1;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-parallel-item:only-child::after {width: 0;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-533f405b-f8ae-430f-ac03-766a9a8f743a div.sk-text-repr-fallback {display: none;}</style><div id="sk-533f405b-f8ae-430f-ac03-766a9a8f743a" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                 ColumnTransformer(remainder=&#x27;passthrough&#x27;, sparse_threshold=0,
+                                   transformers=[(&#x27;cat_preprocessor&#x27;,
+                                                  OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;,
                                                                  unknown_value=-1),
-                                                  ['workclass', 'education',
-                                                   'marital-status',
-                                                   'occupation', 'relationship',
-                                                   'race', 'sex',
-                                                   'native-country'])])),
-                ('classifier',
+                                                  [&#x27;workclass&#x27;, &#x27;education&#x27;,
+                                                   &#x27;marital-status&#x27;,
+                                                   &#x27;occupation&#x27;, &#x27;relationship&#x27;,
+                                                   &#x27;race&#x27;, &#x27;sex&#x27;,
+                                                   &#x27;native-country&#x27;])])),
+                (&#x27;classifier&#x27;,
                  HistGradientBoostingClassifier(max_leaf_nodes=4,
-                                                random_state=42))])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="feb7bc7f-864b-46f9-81f2-1edb7ab000b3" type="checkbox" ><label class="sk-toggleable__label" for="feb7bc7f-864b-46f9-81f2-1edb7ab000b3">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(remainder='passthrough', sparse_threshold=0,
-                  transformers=[('cat-preprocessor',
-                                 OrdinalEncoder(handle_unknown='use_encoded_value',
+                                                random_state=42))])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a04cebac-2b25-4ecf-8bac-37c525ec6274" type="checkbox" ><label for="a04cebac-2b25-4ecf-8bac-37c525ec6274" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                 ColumnTransformer(remainder=&#x27;passthrough&#x27;, sparse_threshold=0,
+                                   transformers=[(&#x27;cat_preprocessor&#x27;,
+                                                  OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;,
+                                                                 unknown_value=-1),
+                                                  [&#x27;workclass&#x27;, &#x27;education&#x27;,
+                                                   &#x27;marital-status&#x27;,
+                                                   &#x27;occupation&#x27;, &#x27;relationship&#x27;,
+                                                   &#x27;race&#x27;, &#x27;sex&#x27;,
+                                                   &#x27;native-country&#x27;])])),
+                (&#x27;classifier&#x27;,
+                 HistGradientBoostingClassifier(max_leaf_nodes=4,
+                                                random_state=42))])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="09a1654f-33aa-45a6-a172-74cba772ecb5" type="checkbox" ><label for="09a1654f-33aa-45a6-a172-74cba772ecb5" class="sk-toggleable__label sk-toggleable__label-arrow">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(remainder=&#x27;passthrough&#x27;, sparse_threshold=0,
+                  transformers=[(&#x27;cat_preprocessor&#x27;,
+                                 OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;,
                                                 unknown_value=-1),
-                                 ['workclass', 'education', 'marital-status',
-                                  'occupation', 'relationship', 'race', 'sex',
-                                  'native-country'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3ca913fb-83eb-4dfd-8bbe-0fb174649b8c" type="checkbox" ><label class="sk-toggleable__label" for="3ca913fb-83eb-4dfd-8bbe-0fb174649b8c">cat-preprocessor</label><div class="sk-toggleable__content"><pre>['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c6cea9cb-2077-4ae2-90d1-ad9700c61253" type="checkbox" ><label class="sk-toggleable__label" for="c6cea9cb-2077-4ae2-90d1-ad9700c61253">OrdinalEncoder</label><div class="sk-toggleable__content"><pre>OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="591362bf-d401-4d5c-8db7-aa33cd48b942" type="checkbox" ><label class="sk-toggleable__label" for="591362bf-d401-4d5c-8db7-aa33cd48b942">remainder</label><div class="sk-toggleable__content"><pre></pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="907ae13d-1cb4-4246-b8d1-1a5fb5bfe340" type="checkbox" ><label class="sk-toggleable__label" for="907ae13d-1cb4-4246-b8d1-1a5fb5bfe340">passthrough</label><div class="sk-toggleable__content"><pre>passthrough</pre></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="16a91a65-035c-44e5-9bd2-c9441661be28" type="checkbox" ><label class="sk-toggleable__label" for="16a91a65-035c-44e5-9bd2-c9441661be28">HistGradientBoostingClassifier</label><div class="sk-toggleable__content"><pre>HistGradientBoostingClassifier(max_leaf_nodes=4, random_state=42)</pre></div></div></div></div></div></div></div></div></div>
+                                 [&#x27;workclass&#x27;, &#x27;education&#x27;, &#x27;marital-status&#x27;,
+                                  &#x27;occupation&#x27;, &#x27;relationship&#x27;, &#x27;race&#x27;, &#x27;sex&#x27;,
+                                  &#x27;native-country&#x27;])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="ad97da22-a220-40de-ad68-f1816fd7a4c6" type="checkbox" ><label for="ad97da22-a220-40de-ad68-f1816fd7a4c6" class="sk-toggleable__label sk-toggleable__label-arrow">cat_preprocessor</label><div class="sk-toggleable__content"><pre>[&#x27;workclass&#x27;, &#x27;education&#x27;, &#x27;marital-status&#x27;, &#x27;occupation&#x27;, &#x27;relationship&#x27;, &#x27;race&#x27;, &#x27;sex&#x27;, &#x27;native-country&#x27;]</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="501c33d1-31ce-41b5-be60-a1eadbf89347" type="checkbox" ><label for="501c33d1-31ce-41b5-be60-a1eadbf89347" class="sk-toggleable__label sk-toggleable__label-arrow">OrdinalEncoder</label><div class="sk-toggleable__content"><pre>OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;, unknown_value=-1)</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="90b5382d-f6a0-4978-84b1-f8b50de13f0b" type="checkbox" ><label for="90b5382d-f6a0-4978-84b1-f8b50de13f0b" class="sk-toggleable__label sk-toggleable__label-arrow">remainder</label><div class="sk-toggleable__content"><pre></pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5c6e32bb-408e-45d9-b1be-cf35c051f193" type="checkbox" ><label for="5c6e32bb-408e-45d9-b1be-cf35c051f193" class="sk-toggleable__label sk-toggleable__label-arrow">passthrough</label><div class="sk-toggleable__content"><pre>passthrough</pre></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a217d072-0041-4ea0-bb0b-cdad23580f6a" type="checkbox" ><label for="a217d072-0041-4ea0-bb0b-cdad23580f6a" class="sk-toggleable__label sk-toggleable__label-arrow">HistGradientBoostingClassifier</label><div class="sk-toggleable__content"><pre>HistGradientBoostingClassifier(max_leaf_nodes=4, random_state=42)</pre></div></div></div></div></div></div></div></div></div>
 </div>
 </div>
 <div class="section" id="tuning-using-a-grid-search">
 <h2>Tuning using a grid-search<a class="headerlink" href="#tuning-using-a-grid-search" title="Permalink to this headline">¶</a></h2>
-<p>Instead of manually writing the two <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, scikit-learn provides a
-class called <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> which implement the exhaustive search implemented
-during the exercise.</p>
-<p>Let see how to use the <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> estimator for doing such search.
+<p>In the previous exercise we used one <code class="docutils literal notranslate"><span class="pre">for</span></code> loop for each hyperparameter to find the
+best combination over a fixed grid of values. <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> is a scikit-learn class
+that implements a very similar logic with less repetitive code.</p>
+<p>Let’s see how to use the <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> estimator for doing such search.
 Since the grid-search will be costly, we will only explore the combination
 learning-rate and the maximum number of nodes.</p>
 <div class="cell docutils container">
@@ -1690,8 +1750,8 @@ learning-rate and the maximum number of nodes.</p>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
 
 <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;classifier__learning_rate&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-    <span class="s1">&#39;classifier__max_leaf_nodes&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span>
+    <span class="s1">&#39;classifier__learning_rate&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="s1">&#39;classifier__max_leaf_nodes&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)}</span>
 <span class="n">model_grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
                                  <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">model_grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">target_train</span><span class="p">)</span>
@@ -1699,37 +1759,57 @@ learning-rate and the maximum number of nodes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.75 s, sys: 155 ms, total: 1.9 s
-Wall time: 12.6 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.6 s, sys: 118 ms, total: 1.72 s
+Wall time: 8.5 s
 </pre></div>
 </div>
-<div class="output text_html"><style>#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e {color: black;background-color: white;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e pre{padding: 0;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-toggleable {background-color: white;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-estimator:hover {background-color: #d4ebff;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-item {z-index: 1;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-parallel-item:only-child::after {width: 0;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-7e577de1-6d5e-4d57-9b36-161361c4be0e div.sk-container {display: inline-block;position: relative;}</style><div id="sk-7e577de1-6d5e-4d57-9b36-161361c4be0e" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="717d5f99-88ef-4b51-b287-afeeea28fe2d" type="checkbox" ><label class="sk-toggleable__label" for="717d5f99-88ef-4b51-b287-afeeea28fe2d">GridSearchCV</label><div class="sk-toggleable__content"><pre>GridSearchCV(cv=2,
-             estimator=Pipeline(steps=[('preprocessor',
-                                        ColumnTransformer(remainder='passthrough',
+<div class="output text_html"><style>#sk-9547c552-691e-4f3e-b918-94b44ecf788b {color: black;background-color: white;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b pre{padding: 0;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-toggleable {background-color: white;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-estimator:hover {background-color: #d4ebff;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-item {z-index: 1;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-parallel-item:only-child::after {width: 0;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-9547c552-691e-4f3e-b918-94b44ecf788b div.sk-text-repr-fallback {display: none;}</style><div id="sk-9547c552-691e-4f3e-b918-94b44ecf788b" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=2,
+             estimator=Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                                        ColumnTransformer(remainder=&#x27;passthrough&#x27;,
                                                           sparse_threshold=0,
-                                                          transformers=[('cat-preprocessor',
-                                                                         OrdinalEncoder(handle_unknown='use_encoded_value',
+                                                          transformers=[(&#x27;cat_preprocessor&#x27;,
+                                                                         OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;,
                                                                                         unknown_value=-1),
-                                                                         ['workclass',
-                                                                          'education',
-                                                                          'marital-status',
-                                                                          'occupation',
-                                                                          'relationship',
-                                                                          'race',
-                                                                          'sex',
-                                                                          'native-country'])])),
-                                       ('classifier',
+                                                                         [&#x27;workclass&#x27;,
+                                                                          &#x27;education&#x27;,
+                                                                          &#x27;marital-status&#x27;,
+                                                                          &#x27;occupation&#x27;,
+                                                                          &#x27;relationship&#x27;,
+                                                                          &#x27;race&#x27;,
+                                                                          &#x27;sex&#x27;,
+                                                                          &#x27;native-country&#x27;])])),
+                                       (&#x27;classifier&#x27;,
                                         HistGradientBoostingClassifier(max_leaf_nodes=4,
                                                                        random_state=42))]),
              n_jobs=2,
-             param_grid={'classifier__learning_rate': (0.05, 0.1, 0.5, 1, 5),
-                         'classifier__max_leaf_nodes': (3, 10, 30, 100)})</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c688425e-5516-4685-8bb3-0ca8cf47be50" type="checkbox" ><label class="sk-toggleable__label" for="c688425e-5516-4685-8bb3-0ca8cf47be50">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(remainder='passthrough', sparse_threshold=0,
-                  transformers=[('cat-preprocessor',
-                                 OrdinalEncoder(handle_unknown='use_encoded_value',
+             param_grid={&#x27;classifier__learning_rate&#x27;: (0.01, 0.1, 1, 10),
+                         &#x27;classifier__max_leaf_nodes&#x27;: (3, 10, 30)})</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9c86fa67-79a2-42f3-a646-6c481072e864" type="checkbox" ><label for="9c86fa67-79a2-42f3-a646-6c481072e864" class="sk-toggleable__label sk-toggleable__label-arrow">GridSearchCV</label><div class="sk-toggleable__content"><pre>GridSearchCV(cv=2,
+             estimator=Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                                        ColumnTransformer(remainder=&#x27;passthrough&#x27;,
+                                                          sparse_threshold=0,
+                                                          transformers=[(&#x27;cat_preprocessor&#x27;,
+                                                                         OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;,
+                                                                                        unknown_value=-1),
+                                                                         [&#x27;workclass&#x27;,
+                                                                          &#x27;education&#x27;,
+                                                                          &#x27;marital-status&#x27;,
+                                                                          &#x27;occupation&#x27;,
+                                                                          &#x27;relationship&#x27;,
+                                                                          &#x27;race&#x27;,
+                                                                          &#x27;sex&#x27;,
+                                                                          &#x27;native-country&#x27;])])),
+                                       (&#x27;classifier&#x27;,
+                                        HistGradientBoostingClassifier(max_leaf_nodes=4,
+                                                                       random_state=42))]),
+             n_jobs=2,
+             param_grid={&#x27;classifier__learning_rate&#x27;: (0.01, 0.1, 1, 10),
+                         &#x27;classifier__max_leaf_nodes&#x27;: (3, 10, 30)})</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="eb854f5e-7edb-41ad-959a-f27f171abb3d" type="checkbox" ><label for="eb854f5e-7edb-41ad-959a-f27f171abb3d" class="sk-toggleable__label sk-toggleable__label-arrow">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(remainder=&#x27;passthrough&#x27;, sparse_threshold=0,
+                  transformers=[(&#x27;cat_preprocessor&#x27;,
+                                 OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;,
                                                 unknown_value=-1),
-                                 ['workclass', 'education', 'marital-status',
-                                  'occupation', 'relationship', 'race', 'sex',
-                                  'native-country'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="64b695e2-117c-4606-b624-10f982360199" type="checkbox" ><label class="sk-toggleable__label" for="64b695e2-117c-4606-b624-10f982360199">cat-preprocessor</label><div class="sk-toggleable__content"><pre>['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e9f15670-ca53-45bf-a4a7-5cf02285c653" type="checkbox" ><label class="sk-toggleable__label" for="e9f15670-ca53-45bf-a4a7-5cf02285c653">OrdinalEncoder</label><div class="sk-toggleable__content"><pre>OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6ab3e1df-ee04-41c3-8843-a0b66a3b374b" type="checkbox" ><label class="sk-toggleable__label" for="6ab3e1df-ee04-41c3-8843-a0b66a3b374b">remainder</label><div class="sk-toggleable__content"><pre></pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3ac9eeef-0016-4b98-b5eb-890c509730aa" type="checkbox" ><label class="sk-toggleable__label" for="3ac9eeef-0016-4b98-b5eb-890c509730aa">passthrough</label><div class="sk-toggleable__content"><pre>passthrough</pre></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="15576e26-1198-45e4-9858-1388f3220797" type="checkbox" ><label class="sk-toggleable__label" for="15576e26-1198-45e4-9858-1388f3220797">HistGradientBoostingClassifier</label><div class="sk-toggleable__content"><pre>HistGradientBoostingClassifier(max_leaf_nodes=4, random_state=42)</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+                                 [&#x27;workclass&#x27;, &#x27;education&#x27;, &#x27;marital-status&#x27;,
+                                  &#x27;occupation&#x27;, &#x27;relationship&#x27;, &#x27;race&#x27;, &#x27;sex&#x27;,
+                                  &#x27;native-country&#x27;])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="1345732c-8263-482d-9e09-11f822a7f190" type="checkbox" ><label for="1345732c-8263-482d-9e09-11f822a7f190" class="sk-toggleable__label sk-toggleable__label-arrow">cat_preprocessor</label><div class="sk-toggleable__content"><pre>[&#x27;workclass&#x27;, &#x27;education&#x27;, &#x27;marital-status&#x27;, &#x27;occupation&#x27;, &#x27;relationship&#x27;, &#x27;race&#x27;, &#x27;sex&#x27;, &#x27;native-country&#x27;]</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2240802e-7568-499b-88c4-0537598c64a7" type="checkbox" ><label for="2240802e-7568-499b-88c4-0537598c64a7" class="sk-toggleable__label sk-toggleable__label-arrow">OrdinalEncoder</label><div class="sk-toggleable__content"><pre>OrdinalEncoder(handle_unknown=&#x27;use_encoded_value&#x27;, unknown_value=-1)</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8cc878fc-f053-43b5-a3ea-3390fccaf499" type="checkbox" ><label for="8cc878fc-f053-43b5-a3ea-3390fccaf499" class="sk-toggleable__label sk-toggleable__label-arrow">remainder</label><div class="sk-toggleable__content"><pre></pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="484bbb7e-303f-44aa-bb3d-384b43b902f3" type="checkbox" ><label for="484bbb7e-303f-44aa-bb3d-384b43b902f3" class="sk-toggleable__label sk-toggleable__label-arrow">passthrough</label><div class="sk-toggleable__content"><pre>passthrough</pre></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="09e86740-0629-4052-b678-7e42e564dbc8" type="checkbox" ><label for="09e86740-0629-4052-b678-7e42e564dbc8" class="sk-toggleable__label sk-toggleable__label-arrow">HistGradientBoostingClassifier</label><div class="sk-toggleable__content"><pre>HistGradientBoostingClassifier(max_leaf_nodes=4, random_state=42)</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
 </div>
 <p>Finally, we will check the accuracy of our model using the test set.</p>
 <div class="cell docutils container">
@@ -1750,18 +1830,19 @@ Wall time: 12.6 s
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Be aware that the evaluation should normally be performed in a
-cross-validation framework by providing <code class="docutils literal notranslate"><span class="pre">model_grid_search</span></code> as a model to
-the <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> function.</p>
-<p>Here, we are using a single train-test split to highlight the specificities
-of the <code class="docutils literal notranslate"><span class="pre">model_grid_search</span></code> instance. We will show such examples in the last
-section of this notebook.</p>
+<p>Be aware that the evaluation should normally be performed through
+cross-validation by providing <code class="docutils literal notranslate"><span class="pre">model_grid_search</span></code> as a model to the
+<code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> function.</p>
+<p>Here, we used a single train-test split to to evaluate <code class="docutils literal notranslate"><span class="pre">model_grid_search</span></code>.
+In a future notebook will go into more detail about nested cross-validation,
+when you use cross-validation both for hyperparameter tuning and model
+evaluation.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> estimator takes a <code class="docutils literal notranslate"><span class="pre">param_grid</span></code> parameter which defines
 all hyperparameters and their associated values. The grid-search will be in
 charge of creating all possible combinations and test them.</p>
 <p>The number of combinations will be equal to the product of the
-number of values to explore for each parameter (e.g. in our example 4 x 4
+number of values to explore for each parameter (e.g. in our example 4 x 3
 combinations). Thus, adding new parameters with their associated values to be
 explored become rapidly computationally expensive.</p>
 <p>Once the grid-search is fitted, it can be used as any other predictor by
@@ -1845,11 +1926,11 @@ from these results.</p>
   </thead>
   <tbody>
     <tr>
-      <th>6</th>
-      <td>0.517412</td>
-      <td>0.057929</td>
-      <td>0.244013</td>
-      <td>0.020796</td>
+      <th>5</th>
+      <td>0.601693</td>
+      <td>0.063490</td>
+      <td>0.273408</td>
+      <td>0.022999</td>
       <td>0.1</td>
       <td>30</td>
       <td>{'classifier__learning_rate': 0.1, 'classifier...</td>
@@ -1860,41 +1941,11 @@ from these results.</p>
       <td>1</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>0.644458</td>
-      <td>0.003976</td>
-      <td>0.276347</td>
-      <td>0.001066</td>
-      <td>0.05</td>
-      <td>30</td>
-      <td>{'classifier__learning_rate': 0.05, 'classifie...</td>
-      <td>0.868530</td>
-      <td>0.866667</td>
-      <td>0.867598</td>
-      <td>0.000932</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.183126</td>
-      <td>0.002524</td>
-      <td>0.117690</td>
-      <td>0.006355</td>
-      <td>0.5</td>
-      <td>30</td>
-      <td>{'classifier__learning_rate': 0.5, 'classifier...</td>
-      <td>0.867056</td>
-      <td>0.865902</td>
-      <td>0.866479</td>
-      <td>0.000577</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.417327</td>
-      <td>0.018086</td>
-      <td>0.211904</td>
-      <td>0.001005</td>
+      <th>4</th>
+      <td>0.448294</td>
+      <td>0.005379</td>
+      <td>0.265656</td>
+      <td>0.022180</td>
       <td>0.1</td>
       <td>10</td>
       <td>{'classifier__learning_rate': 0.1, 'classifier...</td>
@@ -1902,21 +1953,51 @@ from these results.</p>
       <td>0.866066</td>
       <td>0.866425</td>
       <td>0.000359</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.159888</td>
+      <td>0.006563</td>
+      <td>0.109836</td>
+      <td>0.003450</td>
+      <td>1</td>
+      <td>10</td>
+      <td>{'classifier__learning_rate': 1, 'classifier__...</td>
+      <td>0.854826</td>
+      <td>0.862899</td>
+      <td>0.858863</td>
+      <td>0.004036</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.197938</td>
+      <td>0.035306</td>
+      <td>0.121882</td>
+      <td>0.011881</td>
+      <td>1</td>
+      <td>3</td>
+      <td>{'classifier__learning_rate': 1, 'classifier__...</td>
+      <td>0.853844</td>
+      <td>0.860934</td>
+      <td>0.857389</td>
+      <td>0.003545</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>0.298996</td>
-      <td>0.004833</td>
-      <td>0.144832</td>
-      <td>0.001170</td>
-      <td>0.5</td>
+      <th>3</th>
+      <td>0.332905</td>
+      <td>0.009797</td>
+      <td>0.173199</td>
+      <td>0.002024</td>
+      <td>0.1</td>
       <td>3</td>
-      <td>{'classifier__learning_rate': 0.5, 'classifier...</td>
-      <td>0.864872</td>
-      <td>0.866776</td>
-      <td>0.865824</td>
-      <td>0.000952</td>
+      <td>{'classifier__learning_rate': 0.1, 'classifier...</td>
+      <td>0.852752</td>
+      <td>0.853781</td>
+      <td>0.853266</td>
+      <td>0.000515</td>
       <td>5</td>
     </tr>
   </tbody>
@@ -1977,7 +2058,7 @@ names to remove the <code class="docutils literal notranslate"><span class="pre"
   </thead>
   <tbody>
     <tr>
-      <th>6</th>
+      <th>5</th>
       <td>0.1</td>
       <td>30</td>
       <td>0.868063</td>
@@ -1985,156 +2066,92 @@ names to remove the <code class="docutils literal notranslate"><span class="pre"
       <td>1</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>0.05</td>
-      <td>30</td>
-      <td>0.867598</td>
-      <td>0.000932</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.5</td>
-      <td>30</td>
-      <td>0.866479</td>
-      <td>0.000577</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>5</th>
+      <th>4</th>
       <td>0.1</td>
       <td>10</td>
       <td>0.866425</td>
       <td>0.000359</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.5</td>
-      <td>3</td>
-      <td>0.865824</td>
-      <td>0.000952</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.5</td>
-      <td>10</td>
-      <td>0.865824</td>
-      <td>0.000031</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.05</td>
-      <td>100</td>
-      <td>0.865797</td>
-      <td>0.001259</td>
-      <td>7</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.1</td>
-      <td>100</td>
-      <td>0.864732</td>
-      <td>0.000795</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.05</td>
-      <td>10</td>
-      <td>0.862029</td>
-      <td>0.000222</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.5</td>
-      <td>100</td>
-      <td>0.859491</td>
-      <td>0.001069</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>13</th>
       <td>1</td>
       <td>10</td>
       <td>0.858863</td>
       <td>0.004036</td>
-      <td>11</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>6</th>
       <td>1</td>
       <td>3</td>
       <td>0.857389</td>
       <td>0.003545</td>
-      <td>12</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>0.1</td>
       <td>3</td>
       <td>0.853266</td>
       <td>0.000515</td>
-      <td>13</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>14</th>
+      <th>8</th>
       <td>1</td>
       <td>30</td>
       <td>0.851028</td>
       <td>0.002707</td>
-      <td>14</td>
+      <td>6</td>
     </tr>
     <tr>
-      <th>15</th>
-      <td>1</td>
-      <td>100</td>
-      <td>0.835194</td>
-      <td>0.004609</td>
-      <td>15</td>
+      <th>2</th>
+      <td>0.01</td>
+      <td>30</td>
+      <td>0.843330</td>
+      <td>0.002917</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.01</td>
+      <td>10</td>
+      <td>0.817832</td>
+      <td>0.001124</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.05</td>
+      <td>0.01</td>
       <td>3</td>
-      <td>0.827196</td>
-      <td>0.000214</td>
-      <td>16</td>
+      <td>0.797166</td>
+      <td>0.000715</td>
+      <td>9</td>
     </tr>
     <tr>
-      <th>19</th>
-      <td>5</td>
-      <td>100</td>
-      <td>0.727579</td>
-      <td>0.055780</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>5</td>
-      <td>30</td>
-      <td>0.638062</td>
-      <td>0.144696</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>5</td>
+      <th>10</th>
       <td>10</td>
-      <td>0.527527</td>
-      <td>0.175411</td>
-      <td>19</td>
+      <td>10</td>
+      <td>0.618080</td>
+      <td>0.124277</td>
+      <td>10</td>
     </tr>
     <tr>
-      <th>16</th>
-      <td>5</td>
+      <th>11</th>
+      <td>10</td>
+      <td>30</td>
+      <td>0.549338</td>
+      <td>0.210599</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
       <td>3</td>
       <td>0.283476</td>
       <td>0.003775</td>
-      <td>20</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -2179,11 +2196,9 @@ heatmap. We need to transform our <code class="docutils literal notranslate"><sp
       <th>3</th>
       <th>10</th>
       <th>30</th>
-      <th>100</th>
     </tr>
     <tr>
       <th>learning_rate</th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2191,39 +2206,28 @@ heatmap. We need to transform our <code class="docutils literal notranslate"><sp
   </thead>
   <tbody>
     <tr>
-      <th>0.05</th>
-      <td>0.827196</td>
-      <td>0.862029</td>
-      <td>0.867598</td>
-      <td>0.865797</td>
+      <th>0.01</th>
+      <td>0.797166</td>
+      <td>0.817832</td>
+      <td>0.843330</td>
     </tr>
     <tr>
       <th>0.10</th>
       <td>0.853266</td>
       <td>0.866425</td>
       <td>0.868063</td>
-      <td>0.864732</td>
-    </tr>
-    <tr>
-      <th>0.50</th>
-      <td>0.865824</td>
-      <td>0.865824</td>
-      <td>0.866479</td>
-      <td>0.859491</td>
     </tr>
     <tr>
       <th>1.00</th>
       <td>0.857389</td>
       <td>0.858863</td>
       <td>0.851028</td>
-      <td>0.835194</td>
     </tr>
     <tr>
-      <th>5.00</th>
+      <th>10.00</th>
       <td>0.283476</td>
-      <td>0.527527</td>
-      <td>0.638062</td>
-      <td>0.727579</td>
+      <td>0.618080</td>
+      <td>0.549338</td>
     </tr>
   </tbody>
 </table>
@@ -2246,7 +2250,7 @@ heatmap. We need to transform our <code class="docutils literal notranslate"><sp
 </div>
 <p>The above tables highlights the following things:</p>
 <ul class="simple">
-<li><p>for too high values of <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>, the statistical performance of the
+<li><p>for too high values of <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>, the generalization performance of the
 model is degraded and adjusting the value of <code class="docutils literal notranslate"><span class="pre">max_leaf_nodes</span></code> cannot fix
 that problem;</p></li>
 <li><p>outside of this pathological region, we observe that the optimal choice
@@ -2256,10 +2260,9 @@ close to the maximal of 0.87: when the value of <code class="docutils literal no
 increased, one should decrease the value of <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> accordingly
 to preserve a good accuracy.</p></li>
 </ul>
-<p>The precise meaning of those two parameters will be explained in a latter
-notebook.</p>
+<p>The precise meaning of those two parameters will be explained later.</p>
 <p>For now we will note that, in general, <strong>there is no unique optimal parameter
-setting</strong>: 6 models out of the 16 parameter configuration reach the maximal
+setting</strong>: 4 models out of the 12 parameter configurations reach the maximal
 accuracy (up to small random fluctuations caused by the sampling of the
 training set).</p>
 <p>In this notebook we have seen:</p>
@@ -2294,25 +2297,35 @@ grid-search;</p></li>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../tuning/parameter_tuning_automated_index.html" title="previous page">Automated tuning</a>
-    <a class='right-next' id="next-link" href="parameter_tuning_randomized_search.html" title="next page">Hyperparameter tuning by randomized-search</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../tuning/parameter_tuning_automated_index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Automated tuning</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="parameter_tuning_randomized_search.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hyperparameter tuning by randomized-search</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By scikit-learn developers<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            <div>
+    <footer class="footer">
+  <p>
+    
+      By scikit-learn developers<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        <div>
    <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">Register</a>
   and get the full "Machine learning in Python with scikit-learn" MOOC experience!</br>
   Brought to you by
@@ -2322,18 +2335,16 @@ grid-search;</p></li>
   with many thanks to the <a href="https://scikit-learn.org">scikit-learn</a> community as a whole!
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

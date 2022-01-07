@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hyperparameter tuning &#8212; Scikit-learn course</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,10 +43,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sklearn_mooc.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,7 +59,10 @@
     <link rel="next" title="📝 Exercise M6.05" href="ensemble_ex_05.html" />
     <link rel="prev" title="Hyperparameter tuning with ensemble methods" href="../ensemble/ensemble_hyperparameters_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/scikit-learn-logo.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Machine Learning Concepts
  </span>
@@ -95,7 +109,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ml_concepts/slides.html">
-   📰 Introducing machine-learning concepts
+   🎥 Introducing machine-learning concepts
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The predictive modeling pipeline
  </span>
@@ -193,6 +207,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_video_cross_validation.html">
+     🎥 Validation of a model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_cross_validation.html">
+     Model evaluation using cross-validation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/02_numerical_pipeline_quiz_m1_02.html">
      ✅ Quiz M1.02
     </a>
@@ -240,6 +264,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_video.html">
+     🎥 Visualizing scikit-learn pipelines in Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../predictive_modeling_pipeline/03_categorical_pipeline_quiz_m1_03.html">
      ✅ Quiz M1.03
     </a>
@@ -257,7 +286,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Selecting the best model
  </span>
@@ -280,12 +309,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/overfitting_vs_under_fitting_slides.html">
-     📰 Overfitting and Underfitting
+     🎥 Overfitting and Underfitting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_train_test.html">
-     The framework and why do we need it
+     Cross-validation framework
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,7 +336,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/learning_validation_curves_slides.html">
-     📰 Comparing train and test errors
+     🎥 Comparing train and test errors
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,7 +378,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../overfit/bias_vs_variance_slides.html">
-     📰 Bias versus Variance
+     🎥 Bias versus Variance
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,7 +399,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Hyperparameter tuning
  </span>
@@ -434,8 +463,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../tuning/parameter_tuning_parallel_plot_video.html">
+     🎥 Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameter_tuning_parallel_plot.html">
+     Interactive exploration of hyper-parameter search results
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="parameter_tuning_nested.html">
-     Cross-validation and hyperparameter tuning
+     Evaluation and hyperparameter tuning
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,7 +505,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Linear models
  </span>
@@ -489,7 +528,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/linear_models_slides.html">
-     📰 Intuitions on linear models
+     🎥 Intuitions on linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -590,12 +629,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_models/regularized_linear_models_slides.html">
-     📰 Intuitions on regularized linear models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04a.html">
-     ✅ Quiz M4.04a
+     🎥 Intuitions on regularized linear models
     </a>
    </li>
    <li class="toctree-l2">
@@ -614,8 +648,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04b.html">
-     ✅ Quiz M4.04b
+    <a class="reference internal" href="../linear_models/linear_models_quiz_m4_04.html">
+     ✅ Quiz M4.04
     </a>
    </li>
   </ul>
@@ -668,7 +702,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Decision tree models
  </span>
@@ -691,7 +725,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../trees/slides.html">
-     📰 Intuitions on tree-based models
+     🎥 Intuitions on tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -798,7 +832,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Ensemble of models
  </span>
@@ -821,7 +855,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ensemble/slides.html">
-     📰 Intuitions on ensemble of tree-based models
+     🎥 Intuitions on ensemble of tree-based models
     </a>
    </li>
    <li class="toctree-l2">
@@ -858,7 +892,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_01.html">
-     📃 Solution of Exercise M6.01
+     📃 Solution for Exercise M6.01
     </a>
    </li>
    <li class="toctree-l2">
@@ -899,6 +933,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ensemble_gradient_boosting.html">
+     Gradient-boosting decision tree (GBDT)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ensemble_ex_03.html">
      📝 Exercise M6.03
     </a>
@@ -906,21 +945,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ensemble_sol_03.html">
      📃 Solution for Exercise M6.03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_gradient_boosting.html">
-     Gradient-boosting decision tree (GBDT)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_ex_04.html">
-     📝 Exercise M6.04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ensemble_sol_04.html">
-     📃 Solution for Exercise M6.04
     </a>
    </li>
    <li class="toctree-l2">
@@ -978,7 +1002,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Evaluating model performance
  </span>
@@ -1001,7 +1025,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_baseline.html">
-     Comparing results with baseline and chance level
+     Comparing model performance with a simple baseline
     </a>
    </li>
    <li class="toctree-l2">
@@ -1032,28 +1056,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_03.html">
-     📝 Introductory exercise regarding stratification
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_stratification.html">
      Stratification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_04.html">
-     📝 Introductory exercise for sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="cross_validation_grouping.html">
      Sample grouping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cross_validation_ex_05.html">
-     📝 Introductory exercise for non i.i.d. data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1170,7 +1179,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Feature selection
  </span>
@@ -1224,7 +1233,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   🚧 Interpretation
  </span>
@@ -1241,7 +1250,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -1299,6 +1308,16 @@
    Acknowledgement
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/notebook_timings.html">
+   Notebook timings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/toc_redirect.html">
+   Table of contents
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1345,7 +1364,7 @@
                 data-placement="left">.py</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1381,12 +1400,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#random-forest">
@@ -1406,10 +1425,38 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hyperparameter tuning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random forest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosting-decision-trees">
+   Gradient-boosting decision trees
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="hyperparameter-tuning">
+  <div class="tex2jax_ignore mathjax_ignore section" id="hyperparameter-tuning">
 <h1>Hyperparameter tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">¶</a></h1>
 <p>In the previous section, we did not discuss the parameters of random forest
 and gradient-boosting. However, there are a couple of things to keep in mind
@@ -1426,9 +1473,9 @@ on the validation set of what should be the inner cross-validation.</p>
 <div class="section" id="random-forest">
 <h2>Random forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">¶</a></h2>
 <p>The main parameter to tune for random forest is the <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> parameter.
-In general, the more trees in the forest, the better the statistical
+In general, the more trees in the forest, the better the generalization
 performance will be. However, it will slow down the fitting and prediction
-time. The goal is to balance computing time and statistical performance when
+time. The goal is to balance computing time and generalization performance when
 setting the number of estimators when putting such learner in production.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> parameter could also be tuned. Sometimes, there is no need
 to have fully grown trees. However, be aware that with random forest, trees
@@ -1503,100 +1550,114 @@ underfitted forest.</p>
       <th>8</th>
       <td>30</td>
       <td>None</td>
-      <td>34.560575</td>
+      <td>34.533838</td>
       <td>1</td>
     </tr>
     <tr>
       <th>7</th>
       <td>20</td>
       <td>None</td>
-      <td>35.116353</td>
+      <td>34.917513</td>
       <td>2</td>
     </tr>
     <tr>
       <th>6</th>
       <td>10</td>
       <td>None</td>
-      <td>35.944952</td>
+      <td>35.875018</td>
       <td>3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>30</td>
-      <td>5</td>
-      <td>48.613424</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>20</td>
-      <td>5</td>
-      <td>48.667446</td>
-      <td>5</td>
     </tr>
     <tr>
       <th>3</th>
       <td>10</td>
       <td>5</td>
-      <td>49.102968</td>
+      <td>48.665098</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>30</td>
+      <td>5</td>
+      <td>48.702737</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>5</td>
+      <td>48.917489</td>
       <td>6</td>
     </tr>
     <tr>
       <th>2</th>
       <td>30</td>
       <td>3</td>
-      <td>56.990040</td>
+      <td>56.829046</td>
       <td>7</td>
     </tr>
     <tr>
       <th>1</th>
       <td>20</td>
       <td>3</td>
-      <td>57.161345</td>
+      <td>57.056754</td>
       <td>8</td>
     </tr>
     <tr>
       <th>0</th>
       <td>10</td>
       <td>3</td>
-      <td>57.301043</td>
+      <td>57.196957</td>
       <td>9</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>We can observe that in our grid-search, the largest <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> together
-with the largest <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> led to the best statistical performance.</p>
+<p>We can observe that in our grid-search, the largest <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> together with
+the largest <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> led, on average, to the best performance on the
+validation sets. Now we will estimate the generalization performance of the
+best model by refitting it with the full training set and using the test set
+for scoring on unseen data. This is done by default when calling the <code class="docutils literal notranslate"><span class="pre">.fit</span></code>
+method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error</span> <span class="o">=</span> <span class="o">-</span><span class="n">grid_search</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="n">target_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;On average, our random forest regressor makes an error of </span><span class="si">{</span><span class="n">error</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> k$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On average, our random forest regressor makes an error of 34.59 k$
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="gradient-boosting-decision-trees">
 <h2>Gradient-boosting decision trees<a class="headerlink" href="#gradient-boosting-decision-trees" title="Permalink to this headline">¶</a></h2>
-<p>For gradient-boosting, parameters are coupled, so we cannot set the
-parameters one after the other anymore. The important parameters are
-<code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>, <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, and <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>.</p>
-<p>Let’s first discuss the <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> parameter.
-We saw in the section on gradient-boosting that the algorithm fits the error
-of the previous tree in the ensemble. Thus, fitting fully grown trees will
-be detrimental.
-Indeed, the first tree of the ensemble would perfectly fit (overfit) the data
-and thus no subsequent tree would be required, since there would be no
-residuals.
+<p>For gradient-boosting, parameters are coupled, so we cannot set the parameters
+one after the other anymore. The important parameters are <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>,
+<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, and <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>.</p>
+<p>Let’s first discuss the <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> parameter. We saw in the section on
+gradient-boosting that the algorithm fits the error of the previous tree in
+the ensemble. Thus, fitting fully grown trees will be detrimental. Indeed, the
+first tree of the ensemble would perfectly fit (overfit) the data and thus no
+subsequent tree would be required, since there would be no residuals.
 Therefore, the tree used in gradient-boosting should have a low depth,
 typically between 3 to 8 levels. Having very weak learners at each step will
 help reducing overfitting.</p>
 <p>With this consideration in mind, the deeper the trees, the faster the
 residuals will be corrected and less learners are required. Therefore,
 <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> should be increased if <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> is lower.</p>
-<p>Finally, we have overlooked the impact of the <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> parameter
-until now. When fitting the residuals, we would like the tree
-to try to correct all possible errors or only a fraction of them.
-The learning-rate allows you to control this behaviour.
-A small learning-rate value would only correct the residuals of very few
-samples. If a large learning-rate is set (e.g., 1), we would fit the
-residuals of all samples. So, with a very low learning-rate, we will need
-more estimators to correct the overall error. However, a too large
-learning-rate tends to obtain an overfitted ensemble,
-similar to having a too large tree depth.</p>
+<p>Finally, we have overlooked the impact of the <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> parameter until
+now. When fitting the residuals, we would like the tree to try to correct all
+possible errors or only a fraction of them. The learning-rate allows you to
+control this behaviour. A small learning-rate value would only correct the
+residuals of very few samples. If a large learning-rate is set (e.g., 1), we
+would fit the residuals of all samples. So, with a very low learning-rate, we
+will need more estimators to correct the overall error. However, a too large
+learning-rate tends to obtain an overfitted ensemble, similar to having a too
+large tree depth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingRegressor</span>
@@ -1652,7 +1713,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>5</td>
       <td>0.1</td>
-      <td>35.641315</td>
+      <td>35.674538</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1660,7 +1721,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>3</td>
       <td>1</td>
-      <td>36.740269</td>
+      <td>36.631656</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1668,7 +1729,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>3</td>
       <td>1</td>
-      <td>37.514358</td>
+      <td>37.510990</td>
       <td>3</td>
     </tr>
     <tr>
@@ -1676,7 +1737,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>5</td>
       <td>1</td>
-      <td>39.049031</td>
+      <td>39.080397</td>
       <td>4</td>
     </tr>
     <tr>
@@ -1684,7 +1745,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>5</td>
       <td>0.1</td>
-      <td>39.277506</td>
+      <td>39.358108</td>
       <td>5</td>
     </tr>
     <tr>
@@ -1692,7 +1753,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>5</td>
       <td>1</td>
-      <td>39.430843</td>
+      <td>39.478899</td>
       <td>6</td>
     </tr>
     <tr>
@@ -1700,7 +1761,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>5</td>
       <td>1</td>
-      <td>39.843803</td>
+      <td>39.873871</td>
       <td>7</td>
     </tr>
     <tr>
@@ -1708,7 +1769,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>3</td>
       <td>0.1</td>
-      <td>40.601238</td>
+      <td>40.601148</td>
       <td>8</td>
     </tr>
     <tr>
@@ -1716,7 +1777,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>3</td>
       <td>1</td>
-      <td>41.602175</td>
+      <td>41.592317</td>
       <td>9</td>
     </tr>
     <tr>
@@ -1724,7 +1785,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>None</td>
       <td>0.1</td>
-      <td>45.577073</td>
+      <td>45.578352</td>
       <td>10</td>
     </tr>
     <tr>
@@ -1740,7 +1801,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>None</td>
       <td>0.1</td>
-      <td>45.843898</td>
+      <td>45.830517</td>
       <td>12</td>
     </tr>
     <tr>
@@ -1748,7 +1809,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>None</td>
       <td>1</td>
-      <td>47.389080</td>
+      <td>47.211548</td>
       <td>13</td>
     </tr>
     <tr>
@@ -1756,7 +1817,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>None</td>
       <td>1</td>
-      <td>47.419144</td>
+      <td>47.356075</td>
       <td>14</td>
     </tr>
     <tr>
@@ -1764,7 +1825,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>None</td>
       <td>1</td>
-      <td>47.562586</td>
+      <td>47.400139</td>
       <td>15</td>
     </tr>
     <tr>
@@ -1772,7 +1833,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>None</td>
       <td>0.1</td>
-      <td>51.911191</td>
+      <td>51.932994</td>
       <td>16</td>
     </tr>
     <tr>
@@ -1780,7 +1841,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>5</td>
       <td>0.1</td>
-      <td>56.354220</td>
+      <td>56.352049</td>
       <td>17</td>
     </tr>
     <tr>
@@ -1800,6 +1861,25 @@ similar to having a too large tree depth.</p>
 <p>Here, we tune the <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> but be aware that using early-stopping as
 in the previous exercise will be better.</p>
 </div>
+<p>Now we estimate the generalization performance of the best model
+using the test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error</span> <span class="o">=</span> <span class="o">-</span><span class="n">grid_search</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="n">target_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;On average, our GBDT regressor makes an error of </span><span class="si">{</span><span class="n">error</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> k$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On average, our GBDT regressor makes an error of 35.57 k$
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mean test score in the held-out test set is slightly better than the score
+of the best model. The reason is that the final model is refitted on the whole
+training set and therefore, on more data than the inner cross-validated models
+of the grid search procedure.</p>
 </div>
 </div>
 
@@ -1825,25 +1905,35 @@ in the previous exercise will be better.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../ensemble/ensemble_hyperparameters_index.html" title="previous page">Hyperparameter tuning with ensemble methods</a>
-    <a class='right-next' id="next-link" href="ensemble_ex_05.html" title="next page">📝 Exercise M6.05</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../ensemble/ensemble_hyperparameters_index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Hyperparameter tuning with ensemble methods</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="ensemble_ex_05.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">📝 Exercise M6.05</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By scikit-learn developers<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            <div>
+    <footer class="footer">
+  <p>
+    
+      By scikit-learn developers<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        <div>
    <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">Register</a>
   and get the full "Machine learning in Python with scikit-learn" MOOC experience!</br>
   Brought to you by
@@ -1853,18 +1943,16 @@ in the previous exercise will be better.</p>
   with many thanks to the <a href="https://scikit-learn.org">scikit-learn</a> community as a whole!
 </div>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

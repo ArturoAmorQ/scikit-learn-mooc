@@ -1,5 +1,5 @@
 # %% [markdown]
-# # The framework and why do we need it
+# # Cross-validation framework
 #
 # In the previous notebooks, we introduce some concepts regarding the
 # evaluation of predictive models. While this section could be slightly
@@ -62,7 +62,7 @@ regressor = DecisionTreeRegressor(random_state=0)
 regressor.fit(data, target)
 
 # %% [markdown]
-# After training the regressor, we would like to know its potential statistical
+# After training the regressor, we would like to know its potential generalization
 # performance once deployed in production. For this purpose, we use the mean
 # absolute error, which gives us an error in the native unit, i.e. k\$.
 
@@ -146,33 +146,47 @@ print(f"The testing error of our model is {score:.2f} k$")
 #
 # When doing a single train-test split we don't give any indication regarding
 # the robustness of the evaluation of our predictive model: in particular, if
-# the test set is small, this estimate of the testing error will be
-# unstable and wouldn't reflect the "true error rate" we would have observed
-# with the same model on an unlimited amount of test data.
+# the test set is small, this estimate of the testing error will be unstable and
+# wouldn't reflect the "true error rate" we would have observed with the same
+# model on an unlimited amount of test data.
 #
 # For instance, we could have been lucky when we did our random split of our
 # limited dataset and isolated some of the easiest cases to predict in the
 # testing set just by chance: the estimation of the testing error would be
 # overly optimistic, in this case.
 #
-# **Cross-validation** allows estimating the robustness of a predictive model
-# by repeating the splitting procedure. It will give several training and
-# testing errors and thus some **estimate of the variability of the
-# model statistical performance**.
+# **Cross-validation** allows estimating the robustness of a predictive model by
+# repeating the splitting procedure. It will give several training and testing
+# errors and thus some **estimate of the variability of the model generalization
+# performance**.
 #
-# There are different cross-validation strategies, for now we are going to
-# focus on one called "shuffle-split". At each iteration of this strategy we:
+# There are [different cross-validation
+# strategies](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators),
+# for now we are going to focus on one called "shuffle-split". At each iteration
+# of this strategy we:
 #
 # - randomly shuffle the order of the samples of a copy of the full dataset;
 # - split the shuffled dataset into a train and a test set;
 # - train a new model on the train set;
 # - evaluate the testing error on the test set.
 #
-# We repeat this procedure `n_splits` times. Using `n_splits=40` means that we
-# will train 40 models in total and all of them will be discarded: we just
-# record their statistical performance on each variant of the test set.
+# We repeat this procedure `n_splits` times. Keep in mind that the computational
+# cost increases with `n_splits`.
 #
-# To evaluate the statistical performance of our regressor, we can use
+# ![Cross-validation diagram](../figures/shufflesplit_diagram.png)
+#
+# ```{note}
+# This figure shows the particular case of **shuffle-split** cross-validation
+# strategy using `n_splits=5`.
+# For each cross-validation split, the procedure trains a model on all the red
+# samples and evaluate the score of the model on the blue samples.
+# ```
+#
+# In this case we will set `n_splits=40`, meaning that we will train 40 models
+# in total and all of them will be discarded: we just record their
+# generalization performance on each variant of the test set.
+#
+# To evaluate the generalization performance of our regressor, we can use
 # [`sklearn.model_selection.cross_validate`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html)
 # with a
 # [`sklearn.model_selection.ShuffleSplit`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ShuffleSplit.html)
@@ -225,16 +239,16 @@ cv_results.head(10)
 
 # %% [markdown]
 # We get timing information to fit and predict at each cross-validation
-# iteration. Also, we get the test score, which corresponds to the testing
-# error on each of the splits.
+# iteration. Also, we get the test score, which corresponds to the testing error
+# on each of the splits.
 
 # %%
 len(cv_results)
 
 # %% [markdown]
-# We get 40 entries in our resulting dataframe because we performed 40
-# splits. Therefore, we can show the testing error distribution and thus, have
-# an estimate of its variability.
+# We get 40 entries in our resulting dataframe because we performed 40 splits.
+# Therefore, we can show the testing error distribution and thus, have an
+# estimate of its variability.
 
 # %%
 import matplotlib.pyplot as plt
@@ -244,8 +258,8 @@ plt.xlabel("Mean absolute error (k$)")
 _ = plt.title("Test error distribution")
 
 # %% [markdown]
-# We observe that the testing error is clustered around 47 k\$ and
-# ranges from 43 k\$ to 50 k\$.
+# We observe that the testing error is clustered around 47 k\$ and ranges from
+# 43 k\$ to 50 k\$.
 
 # %%
 print(f"The mean cross-validated testing error is: "
@@ -257,13 +271,12 @@ print(f"The standard deviation of the testing error is: "
 
 # %% [markdown]
 # Note that the standard deviation is much smaller than the mean: we could
-# summarize that our cross-validation estimate of the testing error is
-# 46.36 +/- 1.17 k\$.
+# summarize that our cross-validation estimate of the testing error is 46.36 +/-
+# 1.17 k\$.
 #
 # If we were to train a single model on the full dataset (without
 # cross-validation) and then later had access to an unlimited amount of test
-# data, we would expect its true testing error to fall close to that
-# region.
+# data, we would expect its true testing error to fall close to that region.
 #
 # While this information is interesting in itself, it should be contrasted to
 # the scale of the natural variability of the vector `target` in our dataset.
@@ -308,7 +321,7 @@ print(f"The standard deviation of the target is: {target.std():.2f} k$")
 # During cross-validation, many models are trained and evaluated. Indeed, the
 # number of elements in each array of the output of `cross_validate` is a
 # result from one of these `fit`/`score` procedures. To make it explicit, it is
-# possible to retrieve theses fitted models for each of the splits/folds by
+# possible to retrieve these fitted models for each of the splits/folds by
 # passing the option `return_estimator=True` in `cross_validate`.
 
 # %%
@@ -343,4 +356,4 @@ scores
 # * the necessity of splitting the data into a train and test set;
 # * the meaning of the training and testing errors;
 # * the overall cross-validation framework with the possibility to study
-#   statistical performance variations;
+#   generalization performance variations.

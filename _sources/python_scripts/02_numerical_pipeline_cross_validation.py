@@ -1,14 +1,7 @@
 # ---
 # jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.11.3
 #   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
+#     display_name: Python 3
 #     name: python3
 # ---
 
@@ -143,7 +136,7 @@ cv_result
 scores = cv_result["test_score"]
 print(
     "The mean cross-validation accuracy is: "
-    f"{scores.mean():.3f} +/- {scores.std():.3f}"
+    f"{scores.mean():.3f} ± {scores.std():.3f}"
 )
 
 # %% [markdown]

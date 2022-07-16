@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Linear regression using scikit-learn
 #
@@ -104,7 +111,7 @@ print(f"The mean absolute error of the optimal model is {model_error:.2f} g")
 
 # %% [markdown]
 # A mean absolute error of 313 means that in average, our model make an error
-# of +/- 313 grams when predicting the body mass of a penguin given its flipper
+# of ± 313 grams when predicting the body mass of a penguin given its flipper
 # length.
 
 

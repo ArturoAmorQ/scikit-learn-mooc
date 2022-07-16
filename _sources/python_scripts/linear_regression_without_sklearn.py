@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Linear regression without scikit-learn
 #
@@ -30,11 +37,11 @@ data, target = penguins[[feature_name]], penguins[target_name]
 
 ax = sns.scatterplot(data=penguins, x=feature_name, y=target_name,
                      color="black", alpha=0.5)
-ax.set_title("Flipper length in function of the body mass")
+ax.set_title("Body Mass as a function of the Flipper Length")
 
 # %% [markdown]
 # ```{tip}
-# The function `scatterplot` from searborn take as input the full dataframe
+# The function `scatterplot` from seaborn take as input the full dataframe
 # and the parameter `x` and `y` allows to specify the name of the columns to
 # be plotted. Note that this function returns a matplotlib axis
 # (named `ax` in the example above) that can be further used to add elements on

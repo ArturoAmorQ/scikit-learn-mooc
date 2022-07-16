@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Adaptive Boosting (AdaBoost)
 #
@@ -49,7 +56,7 @@ data_misclassified = data.iloc[misclassified_samples_idx]
 
 # %%
 import matplotlib.pyplot as plt
-from helpers.plotting import DecisionBoundaryDisplay
+from sklearn.inspection import DecisionBoundaryDisplay
 
 DecisionBoundaryDisplay.from_estimator(
     tree, data, response_method="predict", cmap="RdBu", alpha=0.5
@@ -168,8 +175,9 @@ adaboost.fit(data, target)
 # %%
 for boosting_round, tree in enumerate(adaboost.estimators_):
     plt.figure()
+    # we convert `data` into a NumPy array to avoid a warning raised in scikit-learn
     DecisionBoundaryDisplay.from_estimator(
-        tree, data, response_method="predict", cmap="RdBu", alpha=0.5
+        tree, data.to_numpy(), response_method="predict", cmap="RdBu", alpha=0.5
     )
     sns.scatterplot(x=culmen_columns[0], y=culmen_columns[1],
                     hue=target_column, data=penguins,
@@ -193,4 +201,4 @@ print(f"Error of each classifier: {adaboost.estimator_errors_}")
 # While AdaBoost is a nice algorithm to demonstrate the internal machinery of
 # boosting algorithms, it is not the most efficient.
 # This title is handed to the gradient-boosting decision tree (GBDT) algorithm,
-# which we will discuss after a short exercise.
+# which we will discuss in the next unit.

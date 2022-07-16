@@ -9,7 +9,6 @@
 #       jupytext_version: 1.11.5
 #   kernelspec:
 #     display_name: Python 3
-#     language: python
 #     name: python3
 # ---
 
@@ -71,7 +70,8 @@ from sklearn.compose import ColumnTransformer
 
 # %% [markdown]
 # Assemble the final pipeline by combining the above preprocessor
-# with a logistic regression classifier.
+# with a logistic regression classifier. Force the maximum number of
+# iterations to `10_000` to ensure that the model will converge.
 
 # %%
 from sklearn.pipeline import make_pipeline

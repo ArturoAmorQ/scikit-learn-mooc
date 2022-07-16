@@ -1,5 +1,12 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
-# # Interactive exploration of hyper-parameter search results
+# # Analysis of hyperparameter search results
 
 # %% [markdown]
 # In the previous notebook we showed how to implement a randomized
@@ -9,7 +16,7 @@
 
 # %% [markdown]
 # In order to avoid the computational cost and still make a decent analysis,
-# we load the results obtained from a similar search with 200 iterations.
+# we load the results obtained from a similar search with 500 iterations.
 
 # %%
 import pandas as pd
@@ -27,8 +34,6 @@ def shorten_param(param_name):
         return param_name.rsplit("__", 1)[1]
     return param_name
 
-
-# %%
 cv_results = cv_results.rename(shorten_param, axis=1)
 cv_results
 

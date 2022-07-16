@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Regularization of linear regression model
 #
@@ -60,12 +67,12 @@ cv_results = cross_validate(linear_regression, data, target,
 # %%
 train_error = -cv_results["train_score"]
 print(f"Mean squared error of linear regression model on the train set:\n"
-      f"{train_error.mean():.3f} +/- {train_error.std():.3f}")
+      f"{train_error.mean():.3f} ± {train_error.std():.3f}")
 
 # %%
 test_error = -cv_results["test_score"]
 print(f"Mean squared error of linear regression model on the test set:\n"
-      f"{test_error.mean():.3f} +/- {test_error.std():.3f}")
+      f"{test_error.mean():.3f} ± {test_error.std():.3f}")
 
 # %% [markdown]
 # The score on the training set is much better. This generalization performance
@@ -141,12 +148,12 @@ cv_results = cross_validate(ridge, data, target,
 # %%
 train_error = -cv_results["train_score"]
 print(f"Mean squared error of linear regression model on the train set:\n"
-      f"{train_error.mean():.3f} +/- {train_error.std():.3f}")
+      f"{train_error.mean():.3f} ± {train_error.std():.3f}")
 
 # %%
 test_error = -cv_results["test_score"]
 print(f"Mean squared error of linear regression model on the test set:\n"
-      f"{test_error.mean():.3f} +/- {test_error.std():.3f}")
+      f"{test_error.mean():.3f} ± {test_error.std():.3f}")
 
 # %% [markdown]
 # We see that the training and testing scores are much closer, indicating that
@@ -215,12 +222,12 @@ cv_results = cross_validate(ridge, data, target,
 # %%
 train_error = -cv_results["train_score"]
 print(f"Mean squared error of linear regression model on the train set:\n"
-      f"{train_error.mean():.3f} +/- {train_error.std():.3f}")
+      f"{train_error.mean():.3f} ± {train_error.std():.3f}")
 
 # %%
 test_error = -cv_results["test_score"]
 print(f"Mean squared error of linear regression model on the test set:\n"
-      f"{test_error.mean():.3f} +/- {test_error.std():.3f}")
+      f"{test_error.mean():.3f} ± {test_error.std():.3f}")
 
 # %% [markdown]
 # We observe that scaling data has a positive impact on the test score and that
@@ -266,12 +273,25 @@ _ = plt.title("Ridge weights with data scaling and large alpha")
 # of `alpha` will decrease the weight values. A negative value of `alpha` would
 # actually enhance large weights and promote overfitting.
 #
+# ```{note}
+# Here, we only focus on numerical features. For categorical features, it is
+# generally common to omit scaling when features are encoded with a
+# `OneHotEncoder` since the feature values are already on a similar scale.
+#
+# However, this choice can be questioned since scaling interacts with
+# regularization as well. For instance, scaling categorical features that are
+# imbalanced (e.g. more occurrences of a specific category) would even out
+# the impact of regularization to each category. However, scaling such features
+# in the presence of rare categories could be problematic (i.e. division by a very
+# small standard deviation) and it can therefore introduce numerical issues.
+# ```
+#
 # In the previous analysis, we did not study if the parameter `alpha` will have
-# an effect on the performance. We chose the parameter beforehand and fix it
+# an effect on the performance. We chose the parameter beforehand and fixed it
 # for the analysis.
 #
-# In the next section, we will check the impact of this hyperparameter and how
-# it should be tuned.
+# In the next section, we will check the impact of the regularization
+# parameter `alpha` and how it should be tuned.
 #
 # ## Fine tuning the regularization parameter
 #
@@ -321,12 +341,12 @@ cv_results = cross_validate(ridge, data, target,
 # %%
 train_error = -cv_results["train_score"]
 print(f"Mean squared error of linear regression model on the train set:\n"
-      f"{train_error.mean():.3f} +/- {train_error.std():.3f}")
+      f"{train_error.mean():.3f} ± {train_error.std():.3f}")
 
 # %%
 test_error = -cv_results["test_score"]
 print(f"Mean squared error of linear regression model on the test set:\n"
-      f"{test_error.mean():.3f} +/- {test_error.std():.3f}")
+      f"{test_error.mean():.3f} ± {test_error.std():.3f}")
 
 # %% [markdown]
 # By optimizing `alpha`, we see that the training and testing scores are close.
@@ -367,8 +387,9 @@ best_alphas
 
 # %%
 print(f"The mean optimal alpha leading to the best generalization performance is:\n"
-      f"{np.mean(best_alphas):.2f} +/- {np.std(best_alphas):.2f}")
+      f"{np.mean(best_alphas):.2f} ± {np.std(best_alphas):.2f}")
 
 # %% [markdown]
+#
 # In this notebook, you learned about the concept of regularization and
 # the importance of preprocessing and parameter tuning.

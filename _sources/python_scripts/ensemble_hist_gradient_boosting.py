@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Speeding-up gradient-boosting
 # In this notebook, we present a modified version of gradient boosting which
@@ -53,7 +60,7 @@ cv_results_gbdt = cross_validate(
 # %%
 print("Gradient Boosting Decision Tree")
 print(f"Mean absolute error via cross-validation: "
-      f"{-cv_results_gbdt['test_score'].mean():.3f} +/- "
+      f"{-cv_results_gbdt['test_score'].mean():.3f} ± "
       f"{cv_results_gbdt['test_score'].std():.3f} k$")
 print(f"Average fit time: "
       f"{cv_results_gbdt['fit_time'].mean():.3f} seconds")
@@ -85,7 +92,7 @@ data_trans
 # for those features. The smallest bins will be removed.
 # ```
 # We see that the discretizer transforms the original data into integral
-# values (eventhough they are encoded using a floating-point representation).
+# values (even though they are encoded using a floating-point representation).
 # Each value represents the bin index when the distribution by quantile is
 # performed. We can check the number of bins per feature.
 
@@ -110,7 +117,7 @@ cv_results_gbdt = cross_validate(
 # %%
 print("Gradient Boosting Decision Tree with KBinsDiscretizer")
 print(f"Mean absolute error via cross-validation: "
-      f"{-cv_results_gbdt['test_score'].mean():.3f} +/- "
+      f"{-cv_results_gbdt['test_score'].mean():.3f} ± "
       f"{cv_results_gbdt['test_score'].std():.3f} k$")
 print(f"Average fit time: "
       f"{cv_results_gbdt['fit_time'].mean():.3f} seconds")
@@ -143,7 +150,7 @@ cv_results_hgbdt = cross_validate(
 # %%
 print("Histogram Gradient Boosting Decision Tree")
 print(f"Mean absolute error via cross-validation: "
-      f"{-cv_results_hgbdt['test_score'].mean():.3f} +/- "
+      f"{-cv_results_hgbdt['test_score'].mean():.3f} ± "
       f"{cv_results_hgbdt['test_score'].std():.3f} k$")
 print(f"Average fit time: "
       f"{cv_results_hgbdt['fit_time'].mean():.3f} seconds")

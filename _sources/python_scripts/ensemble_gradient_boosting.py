@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Gradient-boosting decision tree (GBDT)
 #
@@ -75,7 +82,7 @@ target_test_predicted = tree.predict(data_test)
 sns.scatterplot(x=data_train["Feature"], y=target_train, color="black",
                 alpha=0.5)
 # plot the predictions
-line_predictions = plt.plot(data_test, target_test_predicted, "--")
+line_predictions = plt.plot(data_test["Feature"], target_test_predicted, "--")
 
 # plot the residuals
 for value, true, predicted in zip(data_train["Feature"],
@@ -116,7 +123,8 @@ target_test_predicted_residuals = tree_residuals.predict(data_test)
 
 # %%
 sns.scatterplot(x=data_train["Feature"], y=residuals, color="black", alpha=0.5)
-line_predictions = plt.plot(data_test, target_test_predicted_residuals, "--")
+line_predictions = plt.plot(
+    data_test["Feature"], target_test_predicted_residuals, "--")
 
 # plot the residuals of the predicted residuals
 for value, true, predicted in zip(data_train["Feature"],
@@ -125,7 +133,8 @@ for value, true, predicted in zip(data_train["Feature"],
     lines_residuals = plt.plot([value, value], [true, predicted], color="red")
 
 plt.legend([line_predictions[0], lines_residuals[0]],
-           ["Fitted tree", "Residuals"])
+           ["Fitted tree", "Residuals"], bbox_to_anchor=(1.05, 0.8),
+           loc="upper left")
 _ = plt.title("Prediction of the previous residuals")
 
 # %% [markdown]
@@ -154,7 +163,7 @@ target_true_residual = residuals.iloc[-2]
 
 sns.scatterplot(x=data_train["Feature"], y=target_train, color="black",
                 alpha=0.5)
-plt.plot(data_test, target_test_predicted, "--")
+plt.plot(data_test["Feature"], target_test_predicted, "--")
 for value, true, predicted in zip(data_train["Feature"],
                                   target_train,
                                   target_train_predicted):
@@ -164,7 +173,7 @@ for value, true, predicted in zip(data_train["Feature"],
 plt.scatter(sample, target_true, label="Sample of interest",
             color="tab:orange", s=200)
 plt.xlim([-1, 0])
-plt.legend()
+plt.legend(bbox_to_anchor=(1.05, 0.8), loc="upper left")
 _ = plt.title("Tree predictions")
 
 # %% [markdown]
@@ -179,7 +188,7 @@ _ = plt.title("Tree predictions")
 
 sns.scatterplot(x=data_train["Feature"], y=residuals,
                 color="black", alpha=0.5)
-plt.plot(data_test, target_test_predicted_residuals, "--")
+plt.plot(data_test["Feature"], target_test_predicted_residuals, "--")
 for value, true, predicted in zip(data_train["Feature"],
                                   residuals,
                                   target_train_predicted_residuals):
@@ -259,7 +268,7 @@ cv_results_gbdt = cross_validate(
 # %%
 print("Gradient Boosting Decision Tree")
 print(f"Mean absolute error via cross-validation: "
-      f"{-cv_results_gbdt['test_score'].mean():.3f} +/- "
+      f"{-cv_results_gbdt['test_score'].mean():.3f} ± "
       f"{cv_results_gbdt['test_score'].std():.3f} k$")
 print(f"Average fit time: "
       f"{cv_results_gbdt['fit_time'].mean():.3f} seconds")
@@ -278,7 +287,7 @@ cv_results_rf = cross_validate(
 # %%
 print("Random Forest")
 print(f"Mean absolute error via cross-validation: "
-      f"{-cv_results_rf['test_score'].mean():.3f} +/- "
+      f"{-cv_results_rf['test_score'].mean():.3f} ± "
       f"{cv_results_rf['test_score'].std():.3f} k$")
 print(f"Average fit time: "
       f"{cv_results_rf['fit_time'].mean():.3f} seconds")

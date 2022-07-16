@@ -1,15 +1,28 @@
 # -*- coding: utf-8 -*-
+# ---
+# jupyter:
+#   jupytext:
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.5
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # 📝 Exercise M4.05
-# In the previous notebook, we presented a non-penalized logistic regression
-# classifier. This classifier accepts a parameter `penalty` to add a
-# regularization. The regularization strength is set using the parameter `C`.
+# In the previous notebook we set `penalty="none"` to disable regularization
+# entirely. This parameter can also control the **type** of regularization to use,
+# whereas the regularization **strength** is set using the parameter `C`.
+# Setting`penalty="none"` is equivalent to an infinitely large value of `C`.
+# In this exercise, we ask you to train a logistic regression classifier using the
+# `penalty="l2"` regularization (which happens to be the default in scikit-learn)
+# to find by yourself the effect of the parameter `C`.
 #
-# In this exercise, we ask you to train a l2-penalized logistic regression
-# classifier and to find by yourself the effect of the parameter `C`.
-#
-# We will start by loading the dataset and create the helper function to show
-# the decision separation as in the previous code.
+# We will start by loading the dataset.
 
 # %% [markdown]
 # ```{note}
@@ -52,9 +65,9 @@ logistic_regression = make_pipeline(
 
 # %% [markdown]
 # Given the following candidates for the `C` parameter, find out the impact of
-# `C` on the classifier decision boundary. You can import the helper class with
-# `from helpers.plotting import DecisionBoundaryDisplay` to plot the decision
-# function boundary. Use the method `from_estimator` from this class.
+# `C` on the classifier decision boundary. You can use
+# `sklearn.inspection.DecisionBoundaryDisplay.from_estimator` to plot the
+# decision function boundary.
 
 # %%
 Cs = [0.01, 0.1, 1, 10]

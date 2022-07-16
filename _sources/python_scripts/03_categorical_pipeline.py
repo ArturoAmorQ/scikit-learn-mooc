@@ -1,14 +1,7 @@
 # ---
 # jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.11.3
 #   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
+#     display_name: Python 3
 #     name: python3
 # ---
 
@@ -340,7 +333,7 @@ cv_results
 
 # %%
 scores = cv_results["test_score"]
-print(f"The accuracy is: {scores.mean():.3f} +/- {scores.std():.3f}")
+print(f"The accuracy is: {scores.mean():.3f} ± {scores.std():.3f}")
 
 # %% [markdown]
 # As you can see, this representation of the categorical variables is

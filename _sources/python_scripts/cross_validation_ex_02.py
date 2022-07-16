@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+# ---
+# jupyter:
+#   jupytext:
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.5
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # 📝 Exercise M7.01
 #
@@ -78,9 +91,6 @@ data, target = adult_census.drop(columns="class"), adult_census["class"]
 # https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html)
 # to find out about the meaning of the `"stratified"` and `"uniform"`
 # strategies.
-
-# %%
-# Write your code here.
 
 # %%
 # Write your code here.

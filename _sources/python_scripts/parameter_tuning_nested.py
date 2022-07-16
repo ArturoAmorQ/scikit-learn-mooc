@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Evaluation and hyperparameter tuning
 #
@@ -100,7 +107,7 @@ cv_results
 # %%
 print(
     "Generalization score without hyperparameters tuning:\n"
-    f"{cv_results['test_score'].mean():.3f} +/- {cv_results['test_score'].std():.3f}"
+    f"{cv_results['test_score'].mean():.3f} ± {cv_results['test_score'].std():.3f}"
 )
 
 # %% [markdown]
@@ -109,7 +116,7 @@ print(
 #
 # ### With hyperparameter tuning
 #
-# As we shown in the previous notebook, one can use a search strategy that uses
+# As shown in the previous notebook, one can use a search strategy that uses
 # cross-validation to find the best set of parameters. Here, we will use a
 # grid-search strategy and reproduce the steps done in the previous notebook.
 #
@@ -162,7 +169,7 @@ model_grid_search.best_params_
 # hyper-parameters and to train the refitted model.
 #
 # Because of the above, one must keep an external, held-out test set for the
-# final evaluation the refitted model. We highlight here the process using a
+# final evaluation of the refitted model. We highlight here the process using a
 # single train-test split.
 
 # %%
@@ -177,13 +184,13 @@ accuracy = model_grid_search.score(data_test, target_test)
 print(f"Accuracy on test set: {accuracy:.3f}")
 
 # %% [markdown]
-# The score measure on the final test set is almost with the range of the
-# internal CV score for the best hyper-paramter combination. This is reassuring
+# The score measure on the final test set is almost within the range of the
+# internal CV score for the best hyper-parameter combination. This is reassuring
 # as it means that the tuning procedure did not cause significant overfitting
 # in itself (other-wise the final test score would have been lower than the
 # internal CV scores). That is expected because our grid search explored very
 # few hyper-parameter combinations for the sake of speed. The test score of the
-# final model is actually a bit higher that what we could have expected from
+# final model is actually a bit higher than what we could have expected from
 # the internal cross-validation. This is also expected because the refitted
 # model is trained on a larger dataset than the models evaluated in the
 # internal CV loop of the grid-search procedure. This is often the case that
@@ -205,7 +212,7 @@ print(f"Accuracy on test set: {accuracy:.3f}")
 # samples. The best hyper-parameters are selected based on those intermediate
 # scores.
 #
-# The a final model tuned with those hyper-parameters is fitted on the
+# Then a final model tuned with those hyper-parameters is fitted on the
 # concatenation of the red and green samples and evaluated on the blue samples.
 #
 # The green samples are sometimes called a **validation sets** to differentiate
@@ -224,7 +231,7 @@ print(f"Accuracy on test set: {accuracy:.3f}")
 # refitted tuned model.
 #
 # In practice, we only need to embed the grid-search in the function
-# `cross-validate` to perform such evaluation.
+# `cross_validate` to perform such evaluation.
 
 # %%
 cv_results = cross_validate(
@@ -236,7 +243,7 @@ cv_results = pd.DataFrame(cv_results)
 cv_test_scores = cv_results['test_score']
 print(
     "Generalization score with hyperparameters tuning:\n"
-    f"{cv_test_scores.mean():.3f} +/- {cv_test_scores.std():.3f}"
+    f"{cv_test_scores.mean():.3f} ± {cv_test_scores.std():.3f}"
 )
 
 # %% [markdown]
@@ -283,7 +290,7 @@ for cv_fold, estimator_in_fold in enumerate(cv_results["estimator"]):
 
 # %% [markdown]
 # It is interesting to see whether the hyper-parameter tuning procedure always
-# select similar values for the hyperparameters. If its the case, then all is
+# select similar values for the hyperparameters. If it is the case, then all is
 # fine. It means that we can deploy a model fit with those hyperparameters and
 # expect that it will have an actual predictive performance close to what we
 # measured in the outer cross-validation.
@@ -294,7 +301,7 @@ for cv_fold, estimator_in_fold in enumerate(cv_results["estimator"]):
 # coordinate plot of the results of a large hyperparameter search as seen in
 # the exercises.
 #
-# From a deployment point of view, one could also chose to deploy all the
+# From a deployment point of view, one could also choose to deploy all the
 # models found by the outer cross-validation loop and make them vote to get the
 # final predictions. However this can cause operational problems because it
 # uses more memory and makes computing prediction slower, resulting in a higher

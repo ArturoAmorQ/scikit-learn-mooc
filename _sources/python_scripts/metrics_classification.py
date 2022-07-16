@@ -1,5 +1,19 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Classification
+#
+# Machine learning models rely on optimizing an objective function, by seeking
+# its minimum or maximum. It is important to understand that this objective
+# function is usually decoupled from the evaluation metric that we want to
+# optimize in practice. The objective function serves as a proxy for the
+# evaluation metric. Therefore, in the upcoming notebooks, we will present
+# the different evaluation metrics used in machine learning.
 #
 # This notebook aims at giving an overview of the classification metrics that
 # can be used to evaluate the predictive model generalization performance. We can
@@ -58,12 +72,12 @@ classifier.fit(data_train, target_train)
 
 # %% [markdown]
 # ## Classifier predictions
-# Before we go into details regarding the metrics, we will recall what type
-# of predictions a classifier can provide.
+# Before we go into details regarding the metrics, we will recall what type of
+# predictions a classifier can provide.
 #
 # For this reason, we will create a synthetic sample for a new potential donor:
-# he/she donated blood twice in the past (1000 c.c. each time). The last time
-# was 6 months ago, and the first time goes back to 20 months ago.
+# they donated blood twice in the past (1000 c.c. each time). The last time was
+# 6 months ago, and the first time goes back to 20 months ago.
 
 # %%
 new_donor = pd.DataFrame(
@@ -137,13 +151,13 @@ classifier.score(data_test, target_test)
 # %% [markdown]
 # ## Confusion matrix and derived metrics
 # The comparison that we did above and the accuracy that we calculated did not
-# take into account the type of error our classifier was making. Accuracy
-# is an aggregate of the errors made by the classifier. We may be interested
-# in finer granularity - to know independently what the error is for each of
-# the two following cases:
+# take into account the type of error our classifier was making. Accuracy is an
+# aggregate of the errors made by the classifier. We may be interested in finer
+# granularity - to know independently what the error is for each of the two
+# following cases:
 #
-# - we predicted that a person will give blood but she/he did not;
-# - we predicted that a person will not give blood but she/he did.
+# - we predicted that a person will give blood but they did not;
+# - we predicted that a person will not give blood but they did.
 
 # %%
 from sklearn.metrics import ConfusionMatrixDisplay
@@ -290,6 +304,7 @@ disp = PrecisionRecallDisplay.from_estimator(
     classifier, data_test, target_test, pos_label='donated',
     marker="+"
 )
+plt.legend(bbox_to_anchor=(1.05, 0.8), loc="upper left")
 _ = disp.ax_.set_title("Precision-recall curve")
 
 # %% [markdown]
@@ -329,6 +344,7 @@ disp = RocCurveDisplay.from_estimator(
 disp = RocCurveDisplay.from_estimator(
     dummy_classifier, data_test, target_test, pos_label='donated',
     color="tab:orange", linestyle="--", ax=disp.ax_)
+plt.legend(bbox_to_anchor=(1.05, 0.8), loc="upper left")
 _ = disp.ax_.set_title("ROC AUC curve")
 
 # %% [markdown]

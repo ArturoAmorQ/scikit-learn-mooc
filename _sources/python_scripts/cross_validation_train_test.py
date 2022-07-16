@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Cross-validation framework
 #
@@ -253,7 +260,7 @@ len(cv_results)
 # %%
 import matplotlib.pyplot as plt
 
-cv_results["test_error"].plot.hist(bins=10, edgecolor="black", density=True)
+cv_results["test_error"].plot.hist(bins=10, edgecolor="black")
 plt.xlabel("Mean absolute error (k$)")
 _ = plt.title("Test error distribution")
 
@@ -271,7 +278,7 @@ print(f"The standard deviation of the testing error is: "
 
 # %% [markdown]
 # Note that the standard deviation is much smaller than the mean: we could
-# summarize that our cross-validation estimate of the testing error is 46.36 +/-
+# summarize that our cross-validation estimate of the testing error is 46.36 ±
 # 1.17 k\$.
 #
 # If we were to train a single model on the full dataset (without
@@ -284,7 +291,7 @@ print(f"The standard deviation of the testing error is: "
 # Let us plot the distribution of the target variable:
 
 # %%
-target.plot.hist(bins=20, edgecolor="black", density=True)
+target.plot.hist(bins=20, edgecolor="black")
 plt.xlabel("Median House Value (k$)")
 _ = plt.title("Target distribution")
 

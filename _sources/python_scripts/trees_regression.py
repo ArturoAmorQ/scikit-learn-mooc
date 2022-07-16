@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # Decision tree for regression
 #
@@ -45,9 +52,9 @@ data_test = pd.DataFrame(np.arange(data_train[feature_name].min(),
 # some intuitive understanding on the shape of the decision function of the
 # learned decision trees.
 #
-# However computing an evaluation metric on such a synthetic test set would
-# be meaningless since the synthetic dataset does not follow the same
-# distribution as the real world data on which the model will be deployed.
+# However computing an evaluation metric on such a synthetic test set would be
+# meaningless since the synthetic dataset does not follow the same distribution
+# as the real world data on which the model will be deployed.
 
 # %%
 import matplotlib.pyplot as plt
@@ -71,20 +78,20 @@ target_predicted = linear_model.predict(data_test)
 # %%
 sns.scatterplot(data=penguins, x=feature_name, y=target_name,
                 color="black", alpha=0.5)
-plt.plot(data_test, target_predicted, label="Linear regression")
+plt.plot(data_test[feature_name], target_predicted, label="Linear regression")
 plt.legend()
 _ = plt.title("Prediction function using a LinearRegression")
 
 
 # %% [markdown]
-# On the plot above, we see that a non-regularized `LinearRegression` is able
-# to fit the data. A feature of this model is that all new predictions
-# will be on the line.
+# On the plot above, we see that a non-regularized `LinearRegression` is able to
+# fit the data. A feature of this model is that all new predictions will be on
+# the line.
 
 # %%
 ax = sns.scatterplot(data=penguins, x=feature_name, y=target_name,
                      color="black", alpha=0.5)
-plt.plot(data_test, target_predicted, label="Linear regression",
+plt.plot(data_test[feature_name], target_predicted, label="Linear regression",
          linestyle="--")
 plt.scatter(data_test[::3], target_predicted[::3], label="Predictions",
             color="tab:orange")
@@ -92,10 +99,10 @@ plt.legend()
 _ = plt.title("Prediction function using a LinearRegression")
 
 # %% [markdown]
-# Contrary to linear models, decision trees are non-parametric models:
-# they do not make assumptions about the way data is distributed.
-# This will affect the prediction scheme. Repeating the above experiment
-# will highlight the differences.
+# Contrary to linear models, decision trees are non-parametric models: they do
+# not make assumptions about the way data is distributed. This will affect the
+# prediction scheme. Repeating the above experiment will highlight the
+# differences.
 
 # %%
 from sklearn.tree import DecisionTreeRegressor
@@ -107,7 +114,7 @@ target_predicted = tree.predict(data_test)
 # %%
 sns.scatterplot(data=penguins, x=feature_name, y=target_name,
                 color="black", alpha=0.5)
-plt.plot(data_test, target_predicted, label="Decision tree")
+plt.plot(data_test[feature_name], target_predicted, label="Decision tree")
 plt.legend()
 _ = plt.title("Prediction function using a DecisionTreeRegressor")
 
@@ -117,8 +124,8 @@ _ = plt.title("Prediction function using a DecisionTreeRegressor")
 # length and body mass.
 #
 # Instead, we observe that the predictions of the tree are piecewise constant.
-# Indeed, our feature space was split into two partitions. Let's check the
-# tree structure to see what was the threshold found during the training.
+# Indeed, our feature space was split into two partitions. Let's check the tree
+# structure to see what was the threshold found during the training.
 
 # %%
 from sklearn.tree import plot_tree
@@ -128,7 +135,7 @@ _ = plot_tree(tree, feature_names=feature_name, ax=ax)
 
 # %% [markdown]
 # The threshold for our feature (flipper length) is 206.5 mm. The predicted
-# values on each side of the split are two constants: 3683.50 g and 5023.62 g.
+# values on each side of the split are two constants: 3698.71 g and 5032.36 g.
 # These values corresponds to the mean values of the training samples in each
 # partition.
 #
@@ -144,7 +151,7 @@ target_predicted = tree.predict(data_test)
 # %%
 sns.scatterplot(data=penguins, x=feature_name, y=target_name,
                 color="black", alpha=0.5)
-plt.plot(data_test, target_predicted, label="Decision tree")
+plt.plot(data_test[feature_name], target_predicted, label="Decision tree")
 plt.legend()
 _ = plt.title("Prediction function using a DecisionTreeRegressor")
 

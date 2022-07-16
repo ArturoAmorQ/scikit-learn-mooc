@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   kernelspec:
+#     display_name: Python 3
+#     name: python3
+# ---
+
 # %% [markdown]
 # # How to define a scikit-learn pipeline and visualize it
 
@@ -30,7 +37,8 @@ target = (target > 200_000).astype(int)
 data
 
 # %% [markdown]
-# We can cherry-pick some features and only retain this subset of data
+# For the sake of simplicity, we can cherry-pick some features and only retain
+# this arbitrary subset of data:
 
 # %%
 numeric_features = ['LotArea', 'FullBath', 'HalfBath']
@@ -95,4 +103,20 @@ from sklearn.model_selection import cross_validate
 cv_results = cross_validate(model, data, target, cv=5)
 scores = cv_results["test_score"]
 print("The mean cross-validation accuracy is: "
-      f"{scores.mean():.3f} +/- {scores.std():.3f}")
+      f"{scores.mean():.3f} ± {scores.std():.3f}")
+
+# %% [markdown]
+# ```{note}
+# In this case, around 86% of the times the pipeline correctly predicts whether
+# the price of a house is above or below the 200_000 dollars threshold. But
+# be aware that this score was obtained by picking some features by hand, which
+# is not necessarily the best thing we can do for this classification task. In this
+# example we can hope that fitting a complex machine learning pipelines on a
+# richer set of features can improve upon this performance level.
+#
+# Reducing a price estimation problem to a binary classification problem with a
+# single threshold at 200_000 dollars is probably too coarse to be useful in
+# in practice. Treating this problem as a regression problem is probably a better
+# idea. We will see later in this MOOC how to train and evaluate the performance
+# of various regression models.
+# ```
